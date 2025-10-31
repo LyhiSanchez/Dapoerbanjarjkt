@@ -1,360 +1,456 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-    <style>
-  * {
-    box-sizing: border-box;
-  }
-  html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-  main {
-    flex: 1;
-  }
-</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><!-- GANTI JUDUL HALAMAN DI SINI --></title>
-    <!-- Memuat Tailwind CSS dari CDN -->
+    <!-- GANTI JUDUL WEBSITE DI SINI -->
+    <title>Dapoerbanjarjkt - Kuliner Khas Banjar Asli</title>
+    
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Menggunakan font Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Load Google Fonts (Poppins & Lato) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Load Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Tema warna sesuai permintaan
+                        'db-maroon': '#6B0F1A',       // Merah Maroon Pekat (dari slide)
+                        'db-maroon-dark': '#4A0404', // Maroon Sangat Gelap (dari slide)
+                        'db-yellow': '#FFC107',      // Kuning Emas (dari slide)
+                        'db-orange': '#E67E22',      // Oranye (dari slide)
+                        'db-cream': '#FFF5E1',       // Krem/Off-white (dari slide)
+                    },
+                    fontFamily: {
+                        // Font sesuai proposal
+                        'sans': ['Lato', 'sans-serif'],
+                        'heading': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f7f9fc; /* Warna latar belakang lembut */
-        }
-        /* GANTI KODE WARNA UTAMA BISNIS ANDA DI SINI */
-        .text-loopline-primary {
-            color: #ff69b4; /* Pink cerah, mewakili aksesoris anak muda/estetik */
-        }
-        .bg-loopline-primary {
-            background-color: #ff69b4;
-        }
-        .shadow-loopline {
-            box-shadow: 0 10px 25px -5px rgba(255, 105, 180, 0.3), 0 5px 10px -5px rgba(255, 105, 180, 0.15);
-        }
-        .charm-scroll-area::-webkit-scrollbar {
-            display: none;
-        }
-        .charm-scroll-area {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(255, 105, 180, 0.5), 0 2px 4px -1px rgba(255, 105, 180, 0.2);
-        }
+        /* CSS Tambahan untuk scroll-snap (jika diinginkan) atau efek lain */
+        /* Untuk saat ini, kita biarkan Tailwind menangani sebagian besar */
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-db-maroon-dark text-db-cream font-sans antialiased">
 
-    <!-- Header / Navbar -->
-    <header class="bg-white shadow-md sticky top-0 z-10">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-extrabold text-gray-800">
-                <!-- GANTI NAMA BRAND DI SINI -->
-                <span class="text-loopline-primary">Loop</span>Line
-            </h1>
-            <button id="cta-button-mobile" class="bg-loopline-primary text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-pink-600 transition duration-300 sm:hidden">
-                <!-- GANTI TEKS TOMBOL CTA (MOBILE) DI SINI -->
-                Pesan Sekarang
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header class="bg-db-maroon/90 backdrop-blur-sm sticky top-0 z-50 shadow-lg border-b border-db-orange/20">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo / Brand -->
+            <a href="#home" class="text-3xl font-heading font-bold text-db-yellow">
+                <!-- GANTI NAMA BRAND/LOGO DI SINI -->
+                Dapoerbanjarjkt
+            </a>
+            
+            <!-- Menu Links (Desktop) -->
+            <div class="hidden md:flex space-x-6">
+                <!-- GANTI TEKS LINK MENU DI SINI -->
+                <a href="#home" class="text-db-cream hover:text-db-yellow transition duration-300">Home</a>
+                <a href="#menu" class="text-db-cream hover:text-db-yellow transition duration-300">Menu</a>
+                <a href="#order" class="text-db-cream hover:text-db-yellow transition duration-300">Cara Order</a>
+                <a href="#feedback" class="text-db-cream hover:text-db-yellow transition duration-300">Feedback</a>
+                <a href="#kontak" class="bg-db-yellow text-db-maroon-dark font-bold py-2 px-4 rounded-full hover:bg-db-orange hover:text-white transition duration-300">
+                    <!-- GANTI TEKS TOMBOL KONTAK DI SINI -->
+                    Kontak Kami
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-db-yellow text-2xl z-50">
+                <i class="fas fa-bars"></i>
             </button>
-            <button id="cta-button-desktop" class="hidden bg-loopline-primary text-white font-semibold py-2 px-6 rounded-full shadow-md hover:bg-pink-600 transition duration-300 sm:block">
-                <!-- GANTI TEKS TOMBOL CTA (DESKTOP) DI SINI -->
-                Custom Bag Charm (PO)
-            </button>
+        </nav>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="menu-links" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-db-maroon flex flex-col justify-center items-center space-y-8 text-2xl">
+            <!-- GANTI TEKS LINK MENU MOBILE DI SINI -->
+            <a href="#home" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Home</a>
+            <a href="#menu" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Menu</a>
+            <a href="#order" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Cara Order</a>
+            <a href="#feedback" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Feedback</a>
+            <a href="#kontak" class="mobile-link bg-db-yellow text-db-maroon-dark font-bold py-3 px-6 rounded-full hover:bg-db-orange hover:text-white transition duration-300">
+                <!-- GANTI TEKS TOMBOL KONTAK MOBILE DI SINI -->
+                Kontak Kami
+            </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="text-gray-700 body-font py-16 md:py-24 bg-white">
-        <div class="container mx-auto flex flex-col items-center px-5">
-            <div class="lg:w-2/3 w-full text-center">
-                <h2 class="title-font sm:text-5xl text-4xl mb-4 font-extrabold text-gray-900 leading-tight">
-                    <!-- GANTI SLOGAN UTAMA DI SINI -->
-                    <span class="text-loopline-primary">CREATE YOUR CHARM</span>
-                    <br class="hidden sm:inline">
-                    Aksesoris Custom Personalize Your Style!
-                </h2>
-                <p class="mb-8 leading-relaxed text-lg text-gray-600 font-medium">
-                    <!-- GANTI DESKRIPSI SINGKAT PRODUK DI SINI -->
-                    Ciptakan Bag Charm unik sesuai kepribadianmu. Pilih warna, Charm, dan nama. Sesuai Keinginanmmu
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section id="home" class="h-screen min-h-[700px] relative flex items-center justify-center text-center text-white">
+            <!-- Background Image (Menggunakan bingka.jpg) -->
+            <!-- GANTI NAMA FILE GAMBAR BACKGROUND DI SINI (cth: 'gambar-hero-baru.jpg') -->
+            <div class="absolute inset-0 bg-db-maroon-dark bg-no-repeat bg-center" style="background-image: url('bingka.jpg'); background-size: contain;"></div>
+            
+            <!-- Overlay (Dibuat lebih gelap agar teks terbaca) -->
+            <div class="absolute inset-0 bg-black/80"></div>
+            
+            <!-- Hero Content -->
+            <div class="relative z-10 p-6 max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-white drop-shadow-lg mb-4">
+                    <!-- GANTI HEADLINE UTAMA DI SINI -->
+                    Kuliner Khas Banjar
+                </h1>
+                <p class="text-xl md:text-2xl text-db-cream mb-8 font-light drop-shadow-md">
+                    <!-- GANTI SUB-HEADLINE DI SINI -->
+                    Pesan sekarang, obati rindu masakan kampung halaman. Cita rasa otentik Kalimantan Selatan di Jakarta.
                 </p>
-                <div class="flex justify-center">
-                    <button class="btn-primary bg-loopline-primary text-white font-bold py-3 px-8 rounded-full text-lg shadow-loopline transition duration-300" onclick="scrollToSection('produk')">
-                        <!-- GANTI TEKS TOMBOL HERO DI SINI -->
-                        Lihat Produk & Varian
-                    </button>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#menu" class="bg-db-yellow text-db-maroon-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-db-orange hover:text-white transform hover:scale-105 transition duration-300 shadow-lg">
+                        <!-- GANTI TEKS TOMBOL LIHAT MENU DI SINI -->
+                        Lihat Menu
+                    </a>
+                    <!-- GANTI NOMOR WHATSAPP DI SINI (ganti 6285211966962) -->
+                    <a href="https://wa.me/6285211966962" target="_blank" class="bg-transparent border-2 border-db-yellow text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-db-yellow hover:text-db-maroon-dark transform hover:scale-105 transition duration-300 shadow-lg">
+                        <!-- GANTI TEKS TOMBOL PESAN DI SINI -->
+                        Pesan Sekarang (WA)
+                    </a>
                 </div>
             </div>
-            <!-- Placeholder Visual: Charm/Aksesoris -->
-            <div class="mt-12 w-full max-w-lg">
-                <div class="bg-pink-100 p-6 rounded-xl border-4 border-dashed border-pink-300 flex justify-center items-center h-48">
-                    <!-- BISA DIGANTI DENGAN GAMBAR/LOGO ASLI JIKA ADA -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-loopline-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="7" width="18" height="15" rx="2" ry="2"></rect>
-                        <path d="M17 10v-3a5 5 0 0 0-10 0v3"></path>
-                        <circle cx="12" cy="18" r="3" fill="#ff69b4" stroke="none"></circle>
-                        <path d="M12 21v1" stroke="#ff69b4" stroke-dasharray="3 3"></path>
-                    </svg>
-                </div>
-                <p class="text-center text-sm text-gray-500 mt-2">Desain estetik, dibuat khusus untukmu.</p>
+        </section>
+
+        <!-- ===== ABOUT SECTION ===== -->
+        <section id="about" class="py-20 bg-db-maroon">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 class="text-4xl font-heading font-bold text-db-yellow mb-6">
+                    <!-- GANTI JUDUL TENTANG KAMI DI SINI -->
+                    Cita Rasa Asli Banjar di Jakarta
+                </h2>
+                <div class="w-24 h-1.5 bg-db-orange mx-auto mb-6 rounded-full"></div>
+                <p class="text-lg text-db-cream leading-relaxed">
+                    <!-- GANTI DESKRIPSI TENTANG KAMI DI SINI -->
+                    Berdiri sejak 2016, Dapoerbanjarjkt hadir untuk melestarikan kuliner khas Kalimantan Selatan. Kami menghubungkan kerinduan para perantau di Jakarta dengan cita rasa otentik tanah kelahiran. Semua hidangan dibuat dengan resep warisan keluarga dan bahan-bahan pilihan.
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Keunggulan Produk Section -->
-    <section id="produk" class="text-gray-700 body-font bg-gray-50 py-16 md:py-20">
-        <div class="container mx-auto px-5">
-            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Kenapa Harus Loopline? <!-- GANTI JUDUL DI SINI --></h3>
-            <div class="flex flex-wrap text-center">
-
-                <!-- Keunggulan 1: Custom -->
-                <div class="p-4 md:w-1/3 w-full">
-                    <div class="px-6 py-8 border-2 border-gray-200 rounded-xl bg-white shadow-lg transition duration-300 hover:shadow-xl hover:border-loopline-primary">
-                        <!-- GANTI ICON JIKA PERLU -->
-                        <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-pink-100 text-loopline-primary mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5l-2.5 2.5 4 4 2.5-2.5a2.41 2.41 0 0 0-4-4z"/><path d="M22 15s-.5-2-2-2-4 2-4 2"/><path d="M17 19h-5l-5-5-2-8 5 2 8 2 2 5z"/></svg>
+        <!-- ===== MENU SECTION ===== -->
+        <section id="menu" class="py-20 bg-db-maroon-dark">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-heading font-bold text-db-yellow text-center mb-12">
+                    <!-- GANTI JUDUL MENU DI SINI -->
+                    Menu Andalan Kami
+                </h2>
+                
+                <!-- Menu Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Menu Item 1: Soto Banjar -->
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
+                        <img src="Soto Banjar.jpg" alt="Soto Banjar" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI NAMA MENU DI SINI -->
+                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Soto Banjar</h3>
+                            <!-- GANTI DESKRIPSI MENU DI SINI -->
+                            <p class="text-db-cream mb-4">Kuah khas dengan suwiran ayam, perkedel, soun, dan lontong/nasi.</p>
+                            <!-- GANTI HARGA MENU DI SINI -->
+                            <span class="text-xl font-bold text-db-yellow">IDR 35K</span>
                         </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Konsep Custom Eksklusif <!-- GANTI JUDUL KEUNGGULAN 1 --></h4>
-                        <p class="leading-relaxed text-gray-600">Pilih sendiri tali macrame, charm, dan manik huruf (nama/inisial) sesuai selera dan gayamu! <!-- GANTI DESKRIPSI KEUNGGULAN 1 --></p>
                     </div>
-                </div>
 
-                <!-- Keunggulan 2: Desain Kekinian -->
-                <div class="p-4 md:w-1/3 w-full">
-                    <div class="px-6 py-8 border-2 border-gray-200 rounded-xl bg-white shadow-lg transition duration-300 hover:shadow-xl hover:border-loopline-primary">
-                        <!-- GANTI ICON JIKA PERLU -->
-                        <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-pink-100 text-loopline-primary mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg>
+                    <!-- Menu Item 2: Bihun Banjar -->
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
+                        <img src="bihun banjar.jpg" alt="Bihun Banjar" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI NAMA MENU DI SINI -->
+                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Bihun Banjar</h3>
+                            <!-- GANTI DESKRIPSI MENU DI SINI -->
+                            <p class="text-db-cream mb-4">Bihun goreng lezat dengan bumbu khas Banjar dan topping lengkap.</p>
+                            <!-- GANTI HARGA MENU DI SINI -->
+                            <span class="text-xl font-bold text-db-yellow">IDR 20K</span>
                         </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Estetik & Ikuti Tren <!-- GANTI JUDUL KEUNGGULAN 2 --></h4>
-                        <p class="leading-relaxed text-gray-600">Desain Estetik, cocok untuk mempercantik tas, kunci, atau barang pribadi agar terlihat lebih lucu dan estetik. <!-- GANTI DESKRIPSI KEUNGGULAN 2 --></p>
                     </div>
-                </div>
 
-                <!-- Keunggulan 3: Affordable -->
-                <div class="p-4 md:w-1/3 w-full">
-                    <div class="px-6 py-8 border-2 border-gray-200 rounded-xl bg-white shadow-lg transition duration-300 hover:shadow-xl hover:border-loopline-primary">
-                        <!-- GANTI ICON JIKA PERLU -->
-                        <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-pink-100 text-loopline-primary mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H7l-2 4h14l-2 4h-4"/><path d="M5 9h14M7 13h10"/></svg>
+                    <!-- Menu Item 3: Ketupat Kandangan -->
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
+                        <img src="Ketupat kandanngan.jpg" alt="Ketupat Kandangan" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI NAMA MENU DI SINI -->
+                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Ketupat Kandangan</h3>
+                            <!-- GANTI DESKRIPSI MENU DI SINI -->
+                            <p class="text-db-cream mb-4">Ketupat dengan kuah santan gurih dan pilihan lauk (ikan gabus/ayam).</p>
+                            <!-- GANTI HARGA MENU DI SINI -->
+                            <span class="text-xl font-bold text-db-yellow">Mulai IDR 30K</span>
                         </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Harga Terjangkau <!-- GANTI JUDUL KEUNGGULAN 3 --></h4>
-                        <p class="leading-relaxed text-gray-600">Dengan harga jual terjangkau (Rp15.000/unit), produk ini sangat Affordable kantong pelajar dan mahasiswa. <!-- GANTI DESKRIPSI KEUNGGULAN 3 --></p>
                     </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Varian & Contoh Produk Section -->
-    <section class="text-gray-700 body-font py-16 md:py-20">
-        <div class="container mx-auto px-5">
-            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Contoh Varian Favorit <!-- GANTI JUDUL DI SINI --></h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 charm-scroll-area overflow-x-auto pb-4">
-
-                <!-- Produk Card 1 -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-4 min-w-[160px] cursor-pointer border border-gray-100">
-                    <div class="w-full h-32 bg-purple-200 rounded-lg flex items-center justify-center mb-3">
-                        <span class="text-5xl">🦄 <!-- GANTI DENGAN EMOJI/ICON PRODUK 1 --></span>
+                    
+                    <!-- Menu Item 4: Pundut Nasi -->
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
+                        <img src="pundut nasi.jpg" alt="Pundut Nasi" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI NAMA MENU DI SINI -->
+                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Pundut Nasi</h3>
+                            <!-- GANTI DESKRIPSI MENU DI SINI -->
+                            <p class="text-db-cream mb-4">Nasi gurih dibungkus daun pisang dengan bumbu habang dan lauk.</p>
+                            <!-- GANTI HARGA MENU DI SINI -->
+                            <span class="text-xl font-bold text-db-yellow">Mulai IDR 12K</span>
+                        </div>
                     </div>
-                    <h4 class="text-lg font-semibold text-gray-900 truncate">Varian Unicorn Dream <!-- GANTI NAMA PRODUK 1 --></h4>
-                    <p class="text-sm text-gray-500 mb-2">Tali ungu & charm karakter <!-- GANTI KETERANGAN PRODUK 1 --></p>
-                    <p class="text-xl font-bold text-loopline-primary">Rp15.000 <!-- GANTI HARGA PRODUK 1 --></p>
-                </div>
 
-                <!-- Produk Card 2 -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-4 min-w-[160px] cursor-pointer border border-gray-100">
-                    <div class="w-full h-32 bg-green-200 rounded-lg flex items-center justify-center mb-3">
-                        <span class="text-5xl">🌿 <!-- GANTI DENGAN EMOJI/ICON PRODUK 2 --></span>
+                    <!-- Menu Item 5: Roti Pisang -->
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
+                        <img src="Roti Pisang.jpg" alt="Roti Pisang" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI NAMA MENU DI SINI -->
+                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Roti Pisang</h3>
+                            <!-- GANTI DESKRIPSI MENU DI SINI -->
+                            <p class="text-db-cream mb-4">Kue basah tradisional yang lembut dengan isian pisang manis legit.</p>
+                            <!-- GANTI HARGA MENU DI SINI -->
+                            <span class="text-xl font-bold text-db-yellow">IDR 50K/Box</span>
+                        </div>
                     </div>
-                    <h4 class="text-lg font-semibold text-gray-900 truncate">Varian Nature Vibes <!-- GANTI NAMA PRODUK 2 --></h4>
-                    <p class="text-sm text-gray-500 mb-2">Tali hijau & charm lucu  <!-- GANTI KETERANGAN PRODUK 2 --></p>
-                    <p class="text-xl font-bold text-loopline-primary">Rp15.000 <!-- GANTI HARGA PRODUK 2 --></p>
-                </div>
 
-                <!-- Produk Card 3 -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-4 min-w-[160px] cursor-pointer border border-gray-100">
-                    <div class="w-full h-32 bg-yellow-200 rounded-lg flex items-center justify-center mb-3">
-                        <span class="text-5xl">🌞 <!-- GANTI DENGAN EMOJI/ICON PRODUK 3 --></span>
+                    <!-- Menu Item 6: Wadai Ipau -->
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
+                        <img src="wadai ipau.jpg" alt="Wadai Ipau" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI NAMA MENU DI SINI -->
+                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Wadai Ipau</h3>
+                            <!-- GANTI DESKRIPSI MENU DI SINI -->
+                            <p class="text-db-cream mb-4">Kue lapis gurih khas Banjar dengan lapisan daging dan sayuran.</p>
+                            <!-- GANTI HARGA MENU DI SINI -->
+                            <span class="text-xl font-bold text-db-yellow">IDR 50K</span>
+                        </div>
                     </div>
-                    <h4 class="text-lg font-semibold text-gray-900 truncate">Varian Sunny Initials <!-- GANTI NAMA PRODUK 3 --></h4>
-                    <p class="text-sm text-gray-500 mb-2">Tali kuning & manik nama <!-- GANTI KETERANGAN PRODUK 3 --></p>
-                    <p class="text-xl font-bold text-loopline-primary">Rp15.000 <!-- GANTI HARGA PRODUK 3 --></p>
-                </div>
 
-                <!-- Produk Card 4 -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-4 min-w-[160px] cursor-pointer border border-gray-100">
-                    <div class="w-full h-32 bg-red-200 rounded-lg flex items-center justify-center mb-3">
-                        <span class="text-5xl">❤️ <!-- GANTI DENGAN EMOJI/ICON PRODUK 4 --></span>
+                    <!-- Menu Item 7: Satrup Habang (BARU) -->
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
+                        <img src="sirup habang.jpg" alt="Satrup Habang" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI NAMA MENU DI SINI -->
+                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Satrup Habang</h3>
+                            <!-- GANTI DESKRIPSI MENU DI SINI -->
+                            <p class="text-db-cream mb-4">Sirup homemade khas Banjar, 1 Liter. Cocok untuk campuran es.</p>
+                            <!-- GANTI HARGA MENU DI SINI -->
+                            <span class="text-xl font-bold text-db-yellow">IDR 40K</span>
+                        </div>
                     </div>
-                    <h4 class="text-lg font-semibold text-gray-900 truncate">Varian Couple Set <!-- GANTI NAMA PRODUK 4 --></h4>
-                    <p class="text-sm text-gray-500 mb-2">Spesial 2 gantungan + bonus <!-- GANTI KETERANGAN PRODUK 4 --></p>
-                    <p class="text-xl font-bold text-loopline-primary">Rp30.000 <!-- GANTI HARGA PRODUK 4 --></p>
-                </div>
-
-            </div>
-            <div class="text-center mt-10">
-                <button class="btn-primary bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-full text-lg hover:bg-loopline-primary hover:text-white transition duration-300" onclick="alert('Silahkan langsung Klik Chat Admin Yaa')">
-                    <!-- GANTI TEKS TOMBOL DI SINI -->
-                    Mulai Desain Charm-mu!
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Proses Pemesanan (Call to Action) Section -->
-    <section class="bg-loopline-primary py-16 md:py-20 text-white">
-        <div class="container mx-auto px-5 text-center">
-            <h3 class="text-3xl font-bold mb-4">Bagaimana Cara Pesan? <!-- GANTI JUDUL DI SINI --></h3>
-            <p class="text-lg mb-10 opacity-90">Kami menggunakan sistem Pre-Order (PO) untuk menjamin kualitas custom. <!-- GANTI SUBJUDUL DI SINI --></p>
-
-            <div class="flex flex-wrap justify-center -m-4">
-
-                <!-- Langkah 1 -->
-                <div class="p-4 md:w-1/4 w-1/2">
-                    <div class="bg-white text-gray-800 rounded-xl p-6 shadow-loopline">
-                        <span class="text-4xl font-extrabold text-loopline-primary block mb-2">1.</span>
-                        <p class="font-semibold">Pilih Custom <!-- GANTI TEKS LANGKAH 1 --></p>
-                        <p class="text-sm mt-1">Tentukan desain, warna, dan charm yang kamu mau. <!-- GANTI DESKRIPSI LANGKAH 1 --></p>
+                      <!-- Menu Item 8: Wadai Ipau -->
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
+                        <img src="wadai ipau.jpg" alt="Wadai Ipau" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI NAMA MENU DI SINI -->
+                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Wadai Ipau</h3>
+                            <!-- GANTI DESKRIPSI MENU DI SINI -->
+                            <p class="text-db-cream mb-4">Kue lapis gurih khas Banjar dengan lapisan daging dan sayuran.</p>
+                            <!-- GANTI HARGA MENU DI SINI -->
+                            <span class="text-xl font-bold text-db-yellow">IDR 50K</span>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Langkah 2 -->
-                <div class="p-4 md:w-1/4 w-1/2">
-                    <div class="bg-white text-gray-800 rounded-xl p-6 shadow-loopline">
-                        <span class="text-4xl font-extrabold text-loopline-primary block mb-2">2.</span>
-                        <p class="font-semibold">Proses PO <!-- GANTI TEKS LANGKAH 2 --></p>
-                        <p class="text-sm mt-1">Kami proses perakitan manual (handmade) dalam 1-3 hari. <!-- GANTI DESKRIPSI LANGKAH 2 --></p>
+                    <!-- Menu Item 9: Satrup Habang (BARU) -->
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
+                        <img src="sirup habang.jpg" alt="Satrup Habang" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI NAMA MENU DI SINI -->
+                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Satrup Habang</h3>
+                            <!-- GANTI DESKRIPSI MENU DI SINI -->
+                            <p class="text-db-cream mb-4">Sirup homemade khas Banjar, 1 Liter. Cocok untuk campuran es.</p>
+                            <!-- GANTI HARGA MENU DI SINI -->
+                            <span class="text-xl font-bold text-db-yellow">IDR 40K</span>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Langkah 3 -->
-                <div class="p-4 md:w-1/4 w-1/2">
-                    <div class="bg-white text-gray-800 rounded-xl p-6 shadow-loopline">
-                        <span class="text-4xl font-extrabold text-loopline-primary block mb-2">3.</span>
-                        <p class="font-semibold">Pengambilan (COD) <!-- GANTI TEKS LANGKAH 3 --></p>
-                        <p class="text-sm mt-1">Ambil di GBC PNJ (atau area COD lain yang disepakati). <!-- GANTI DESKRIPSI LANGKAH 3 --></p>
+                      <!-- Menu Item 9: Wadai Ipau -->
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
+                        <img src="wadai ipau.jpg" alt="Wadai Ipau" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI NAMA MENU DI SINI -->
+                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Wadai Ipau</h3>
+                            <!-- GANTI DESKRIPSI MENU DI SINI -->
+                            <p class="text-db-cream mb-4">Kue lapis gurih khas Banjar dengan lapisan daging dan sayuran.</p>
+                            <!-- GANTI HARGA MENU DI SINI -->
+                            <span class="text-xl font-bold text-db-yellow">IDR 50K</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Lokasi -->
-                <div class="p-4 md:w-1/4 w-1/2">
-                    <div class="bg-white text-gray-800 rounded-xl p-6 shadow-loopline">
-                        <span class="text-4xl font-extrabold text-loopline-primary block mb-2">📍</span>
-                        <p class="font-semibold">Lokasi Utama <!-- GANTI JUDUL LOKASI --></p>
-                        <p class="text-sm mt-1">Green Business Center (GBC) Gedung Administrasi Niaga, PNJ. <!-- GANTI DETAIL LOKASI --></p>
-                    </div>
+                    <!-- ANDA BISA COPY-PASTE BLOK MENU ITEM DI ATAS UNTUK MENAMBAH MENU BARU -->
+
                 </div>
             </div>
+        </section>
 
-            <div class="mt-12">
-                <p class="text-xl font-semibold mb-4">Siap bikin charm unikmu? <!-- GANTI CALL TO ACTION --></p>
-                <a href="https://wa.me/6289525465737?text=Hi%20kak!%20Aku%20lihat%20koleksi%20Bagcharm%20kamu%20lucu%20banget%20😍%20Aku%20mau%20tanya-tanya%20dulu%20ya%20soal%20model%20dan%20harganya~" target="_blank" class="btn-primary inline-flex items-center bg-white text-loopline-primary font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-pink-100 transition duration-300">
-                    <!-- GANTI LINK WA DI ATAS & TEKS TOMBOL DI BAWAH -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                    Chat Admin (Pesan via WhatsApp)
-                </a>
-                <p class="text-sm mt-3 opacity-80">Kami melayani ramah dan fast response (IF NOT BUSY.. Hopefully) <!-- GANTI SUB TEKS --></p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-gray-600 body-font bg-gray-800 text-white">
-        <div class="container mx-auto px-5 py-8">
-            <div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
-                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 class="title-font font-bold text-lg text-white mb-3">LOOPLINE <!-- GANTI NAMA BRAND DI SINI --></h2>
-                    <nav class="list-none mb-10">
-                        <li><p class="text-sm text-gray-400">Usaha Aksesoris Custom (Bag Charm). <!-- GANTI DESKRIPSI --></p></li>
-                        <li><p class="text-sm text-gray-400 mt-2">Visi: Menjadi usaha aksesoris kreatif dan kekinian yang digemari anak muda. <!-- GANTI VISI --></p></li>
-                    </nav>
-                </div>
-                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 class="title-font font-bold text-white tracking-widest text-sm mb-3">KONTAK <!-- GANTI JUDUL KOLOM --></h2>
-                    <nav class="list-none mb-10">
-                        <li>
-                            <p class="text-gray-400 hover:text-loopline-primary transition duration-200">Instagram: @loopline.charm <!-- GANTI AKUN IG --></p>
-                        </li>
-                        <li>
-                            <p class="text-gray-400 hover:text-loopline-primary transition duration-200">WhatsApp: 0895-2546-5737<!-- GANTI NOMOR WA --></p>
-                        </li>
-                    </nav>
-                </div>
-                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 class="title-font font-bold text-white tracking-widest text-sm mb-3">PRODUK <!-- GANTI JUDUL KOLOM --></h2>
-                    <nav class="list-none mb-10">
-                        <li>
-                            <p class="text-gray-400">Bag Charm Custom <!-- GANTI NAMA PRODUK --></p>
-                        </li>
-                        <li>
-                            <p class="text-gray-400">Dengan warna tali costum <!-- GANTI NAMA PRODUK --></p>
-                        </li>
-                        <li>
-                            <p class="text-gray-400">Charm & Manik Nama <!-- GANTI NAMA PRODUK --></p>
-                        </li>
-                    </nav>
-                </div>
-                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 class="title-font font-bold text-white tracking-widest text-sm mb-3">PEMBAYARAN <!-- GANTI JUDUL KOLOM --></h2>
-                    <nav class="list-none mb-10">
-                        <li>
-                            <p class="text-gray-400">QRIS <!-- GANTI METODE --></p>
-                        </li>
-                        <li>
-                            <p class="text-gray-400">Cash On Delivery (COD PNJ) <!-- GANTI METODE --></p>
-                        </li>
-                    </nav>
+        <!-- ===== CARA ORDER SECTION ===== -->
+        <section id="order" class="py-20 bg-db-maroon">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-heading font-bold text-db-yellow mb-12">
+                    <!-- GANTI JUDUL CARA ORDER DI SINI -->
+                    Cara Pemesanan Mudah
+                </h2>
+                <div class="flex flex-col md:flex-row justify-center gap-8">
+                    
+                    <!-- Step 1 -->
+                    <div class="bg-db-maroon-dark p-8 rounded-lg shadow-lg border border-db-orange/30 flex-1 max-w-sm mx-auto">
+                        <div class="text-5xl text-db-orange mb-4">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <!-- GANTI JUDUL LANGKAH 1 DI SINI -->
+                        <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">1. Pilih Menu</h3>
+                        <!-- GANTI DESKRIPSI LANGKAH 1 DI SINI -->
+                        <p class="text-db-cream">Lihat daftar menu kami di website dan tentukan pesanan Anda.</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="bg-db-maroon-dark p-8 rounded-lg shadow-lg border border-db-orange/30 flex-1 max-w-sm mx-auto">
+                        <div class="text-5xl text-db-orange mb-4">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <!-- GANTI JUDUL LANGKAH 2 DI SINI -->
+                        <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">2. Hubungi WhatsApp</h3>
+                        <!-- GANTI DESKRIPSI LANGKAH 2 DI SINI -->
+                        <p class="text-db-cream">Klik tombol "Pesan Sekarang" untuk terhubung langsung dengan admin kami.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="bg-db-maroon-dark p-8 rounded-lg shadow-lg border border-db-orange/30 flex-1 max-w-sm mx-auto">
+                        <div class="text-5xl text-db-orange mb-4">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <!-- GANTI JUDUL LANGKAH 3 DI SINI -->
+                        <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">3. Konfirmasi Pesanan</h3>
+                        <!-- GANTI DESKRIPSI LANGKAH 3 DI SINI -->
+                        <p class="text-db-cream">Admin kami akan mengonfirmasi pesanan, total, dan alamat pengiriman Anda.</p>
+                    </div>
+                    
                 </div>
             </div>
-        </div>
-        <div class="bg-gray-900">
-            <div class="container mx-auto py-4 px-5">
-                <p class="text-gray-500 text-sm text-center sm:text-left">© 2025 Loopline — Dibuat oleh ABT3D Kelompok 8 <!-- GANTI COPYRIGHT --></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Fungsi untuk scroll ke bagian produk
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                window.scrollTo({
-                    top: element.offsetTop - 70, // Kurangi tinggi header
-                    behavior: 'smooth'
-                });
-            }
-        }
-
-        // Menambahkan event listener ke tombol CTA di header
-        // GANTI LINK WA DI BAWAH INI DENGAN NOMOR LOOPLINE YANG BENAR
-        const waLink = 'https://wa.me/6289525465737?text=Hi%20kak!%20Aku%20lihat%20koleksi%20Bagcharm%20kamu%20lucu%20banget%20😍%20Aku%20mau%20tanya-tanya%20dulu%20ya%20soal%20model%20dan%20harganya~'; 
+        </section>
         
-        document.getElementById('cta-button-mobile').addEventListener('click', function() {
-            scrollToSection('produk');
-        });
-        document.getElementById('cta-button-desktop').addEventListener('click', function() {
-            window.open(waLink, '_blank');
+        <!-- ===== FEEDBACK SECTION ===== -->
+        <section id="feedback" class="py-20 bg-db-maroon-dark text-center">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-4xl font-heading font-bold text-db-yellow mb-6">
+                    <!-- GANTI JUDUL FEEDBACK DI SINI -->
+                    Beri Kami Masukan
+                </h2>
+                <p class="text-lg text-db-cream mb-8 leading-relaxed max-w-3xl mx-auto">
+                    <!-- GANTI DESKRIPSI FEEDBACK DI SINI -->
+                    Kepuasan Anda adalah prioritas kami. Kami sangat menghargai masukan dan saran Anda untuk terus meningkatkan kualitas produk dan layanan Dapoerbanjarjkt.
+                </p>
+                
+                <!-- Feedback Image and Button Container -->
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+                    <!-- Feedback QR Code Image -->
+                    <div class="md:w-1/2 max-w-xs mx-auto">
+                        <!-- GANTI SUMBER GAMBAR (src) QR CODE DI SINI -->
+                        <img src="feedback.jpg" alt="Scan QR Code untuk Feedback" class="rounded-lg shadow-lg border-4 border-db-orange">
+                    </div>
+                    <!-- Feedback Button -->
+                    <div class="md:w-1/2 flex flex-col items-center justify-center">
+                        <!-- GANTI TEKS AJAKAN DI SINI -->
+                        <p class="text-db-cream text-lg mb-4">Scan QR di samping atau klik tombol di bawah ini:</p>
+                        <!-- GANTI LINK GOOGLE FORM (href) DI SINI -->
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIa7mPQLMT7Z1kPL9LeuJRI8cOXksQbwUCLGLWjUl4q0kFng/viewform" target="_blank" class="bg-db-yellow text-db-maroon-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-db-orange hover:text-white transform hover:scale-105 transition duration-300 shadow-lg">
+                            <!-- GANTI TEKS TOMBOL FEEDBACK DI SINI -->
+                            Isi Survey Feedback
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== KONTAK & FOOTER ===== -->
+        <footer id="kontak" class="py-20 bg-db-maroon border-t-4 border-db-orange">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                
+                <!-- Kolom 1: About -->
+                <div>
+                    <!-- GANTI JUDUL FOOTER DI SINI -->
+                    <h3 class="text-2xl font-heading font-bold text-db-yellow mb-4">Dapoerbanjarjkt</h3>
+                    <!-- GANTI DESKRIPSI SINGKAT FOOTER DI SINI -->
+                    <p class="text-db-cream/80">
+                        Menyajikan kuliner otentik Khas Banjar (Kalimantan Selatan) sejak 2016. Obati rindu masakan kampung halaman Anda.
+                    </p>
+                </div>
+                
+                <!-- Kolom 2: Kontak & Lokasi -->
+                <div>
+                    <!-- GANTI JUDUL KONTAK FOOTER DI SINI -->
+                    <h3 class="text-2xl font-heading font-bold text-db-yellow mb-4">Hubungi Kami</h3>
+                    <ul class="space-y-3 text-db-cream/80">
+                        <!-- GANTI LOKASI DI SINI -->
+                        <li><i class="fas fa-map-marker-alt text-db-orange w-6"></i> Tebet, Jakarta Selatan</li>
+                        <li>
+                            <!-- GANTI LINK WHATSAPP (href) DAN NOMOR (teks) DI SINI -->
+                            <a href="https://wa.me/6285211966962" target="_blank" class="hover:text-db-yellow">
+                                <i class="fab fa-whatsapp text-db-orange w-6"></i> 0852-1196-6962
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Social Media -->
+                <div>
+                    <!-- GANTI JUDUL SOSIAL MEDIA DI SINI -->
+                    <h3 class="text-2xl font-heading font-bold text-db-yellow mb-4">Ikuti Kami</h3>
+                    <div class="flex justify-center md:justify-start space-x-6">
+                        <!-- GANTI LINK INSTAGRAM (href) DI SINI -->
+                        <a href="https://www.instagram.com/Dapoerbanjarjkt/" target="_blank" class="text-db-cream text-3xl hover:text-db-yellow transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!-- GANTI LINK TIKTOK (href) DI SINI -->
+                        <a href="https://www.tiktok.com/@dapoerbanjar_jkt" target="_blank" class="text-db-cream text-3xl hover:text-db-yellow transition duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Copyright -->
+            <div class="text-center text-db-cream/60 pt-12 mt-12 border-t border-db-orange/20">
+                <!-- GANTI TEKS COPYRIGHT DI SINI -->
+                © 2025 Dapoerbanjarjkt. Dibuat dengan cinta di Jakarta.
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript untuk Mobile Menu -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menuLinks = document.getElementById('menu-links');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            menuLinks.classList.toggle('hidden');
+            // Ganti ikon burger menjadi X dan sebaliknya
+            if (menuLinks.classList.contains('hidden')) {
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            } else {
+                menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            }
         });
 
-        // Event listener untuk tombol CTA di proses pemesanan (paling bawah)
-        document.querySelector('a[href^="https://wa.me/6289525465737?text=Hi%20kak!%20Aku%20lihat%20koleksi%20Bagcharm%20kamu%20lucu%20banget%20😍%20Aku%20mau%20tanya-tanya%20dulu%20ya%20soal%20model%20dan%20harganya~"]').href = waLink;
+        // Tutup menu saat link mobile di-klik (untuk navigasi di halaman yang sama)
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuLinks.classList.add('hidden');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
     </script>
+
 </body>
 </html>
-    
-
-
