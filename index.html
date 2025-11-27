@@ -3,35 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- GANTI JUDUL WEBSITE DI SINI -->
     <title>Dapoerbanjarjkt - Kuliner Khas Banjar Asli</title>
     
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Load Google Fonts (Poppins & Lato) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Load Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        // Tema warna sesuai permintaan
-                        'db-maroon': '#6B0F1A',       // Merah Maroon Pekat (dari slide)
-                        'db-maroon-dark': '#4A0404', // Maroon Sangat Gelap (dari slide)
-                        'db-yellow': '#FFC107',      // Kuning Emas (dari slide)
-                        'db-orange': '#E67E22',      // Oranye (dari slide)
-                        'db-cream': '#FFF5E1',       // Krem/Off-white (dari slide)
+                        'db-maroon': '#6B0F1A',
+                        'db-maroon-dark': '#4A0404',
+                        'db-yellow': '#FFC107',
+                        'db-orange': '#E67E22',
+                        'db-cream': '#FFF5E1',
                     },
                     fontFamily: {
-                        // Font sesuai proposal
                         'sans': ['Lato', 'sans-serif'],
                         'heading': ['Poppins', 'sans-serif'],
                     }
@@ -39,324 +32,217 @@
             }
         }
     </script>
-    
-    <style>
-        /* CSS Tambahan untuk scroll-snap (jika diinginkan) atau efek lain */
-        /* Untuk saat ini, kita biarkan Tailwind menangani sebagian besar */
-    </style>
 </head>
-<body class="bg-db-maroon-dark text-db-cream font-sans antialiased">
+<body class="bg-db-maroon-dark text-db-cream font-sans antialiased relative">
 
-    <!-- ===== HEADER / NAVBAR ===== -->
     <header class="bg-db-maroon/90 backdrop-blur-sm sticky top-0 z-50 shadow-lg border-b border-db-orange/20">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo / Brand -->
             <a href="#home" class="text-3xl font-heading font-bold text-db-yellow">
-                <!-- GANTI NAMA BRAND/LOGO DI SINI -->
                 Dapoerbanjarjkt
             </a>
             
-            <!-- Menu Links (Desktop) -->
             <div class="hidden md:flex space-x-6">
-                <!-- GANTI TEKS LINK MENU DI SINI -->
                 <a href="#home" class="text-db-cream hover:text-db-yellow transition duration-300">Home</a>
                 <a href="#menu" class="text-db-cream hover:text-db-yellow transition duration-300">Menu</a>
                 <a href="#order" class="text-db-cream hover:text-db-yellow transition duration-300">Cara Order</a>
                 <a href="#feedback" class="text-db-cream hover:text-db-yellow transition duration-300">Feedback</a>
                 <a href="#kontak" class="bg-db-yellow text-db-maroon-dark font-bold py-2 px-4 rounded-full hover:bg-db-orange hover:text-white transition duration-300">
-                    <!-- GANTI TEKS TOMBOL KONTAK DI SINI -->
                     Kontak Kami
                 </a>
             </div>
             
-            <!-- Mobile Menu Button -->
             <button id="menu-btn" class="md:hidden text-db-yellow text-2xl z-50">
                 <i class="fas fa-bars"></i>
             </button>
         </nav>
         
-        <!-- Mobile Menu (Hidden by default) -->
         <div id="menu-links" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-db-maroon flex flex-col justify-center items-center space-y-8 text-2xl">
-            <!-- GANTI TEKS LINK MENU MOBILE DI SINI -->
             <a href="#home" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Home</a>
             <a href="#menu" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Menu</a>
             <a href="#order" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Cara Order</a>
             <a href="#feedback" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Feedback</a>
             <a href="#kontak" class="mobile-link bg-db-yellow text-db-maroon-dark font-bold py-3 px-6 rounded-full hover:bg-db-orange hover:text-white transition duration-300">
-                <!-- GANTI TEKS TOMBOL KONTAK MOBILE DI SINI -->
                 Kontak Kami
             </a>
         </div>
     </header>
 
     <main>
-        <!-- ===== HERO SECTION ===== -->
-        <section id="home" class="h-screen min-h-[700px] relative flex items-center justify-center text-center text-white">
-            <!-- Background Image (Menggunakan bingka.jpg) -->
-            <!-- GANTI NAMA FILE GAMBAR BACKGROUND DI SINI (cth: 'gambar-hero-baru.jpg') -->
-            <div class="absolute inset-0 bg-db-maroon-dark bg-no-repeat bg-center" style="background-image: url('bin.jpg'); background-size: contain;"></div>
+      <section id="home" class="h-screen min-h-[700px] relative flex items-center justify-center text-center text-white">
+    <div class="absolute inset-0 bg-db-maroon-dark bg-no-repeat bg-center" style="background-image: url('GGG.png'); background-size: cover;"></div>
+    
+    <div class="absolute inset-0 bg-black/80"></div>
+    
             
-            <!-- Overlay (Dibuat lebih gelap agar teks terbaca) -->
-            <div class="absolute inset-0 bg-black/80"></div>
-            
-            <!-- Hero Content -->
             <div class="relative z-10 p-6 max-w-3xl">
                 <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-white drop-shadow-lg mb-4">
-                    <!-- GANTI HEADLINE UTAMA DI SINI -->
                     Kuliner Khas Banjar
                 </h1>
                 <p class="text-xl md:text-2xl text-db-cream mb-8 font-light drop-shadow-md">
-                    <!-- GANTI SUB-HEADLINE DI SINI -->
                     Pesan sekarang, obati rindu masakan kampung halaman. Cita rasa otentik Kalimantan Selatan di Jakarta.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="#menu" class="bg-db-yellow text-db-maroon-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-db-orange hover:text-white transform hover:scale-105 transition duration-300 shadow-lg">
-                        <!-- GANTI TEKS TOMBOL LIHAT MENU DI SINI -->
                         Lihat Menu
                     </a>
-                    <!-- GANTI NOMOR WHATSAPP DI SINI (ganti 6285211966962) -->
-                    <a href="https://wa.me/6285211966962" target="_blank" class="bg-transparent border-2 border-db-yellow text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-db-yellow hover:text-db-maroon-dark transform hover:scale-105 transition duration-300 shadow-lg">
-                        <!-- GANTI TEKS TOMBOL PESAN DI SINI -->
+                    
+                    <a href="https://wa.me/6285211966962" 
+                       target="_blank" 
+                       data-target="WhatsApp"
+                       class="popup-trigger bg-transparent border-2 border-db-yellow text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-db-yellow hover:text-db-maroon-dark transform hover:scale-105 transition duration-300 shadow-lg">
                         Pesan Sekarang (WA)
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- ===== ABOUT SECTION ===== -->
         <section id="about" class="py-20 bg-db-maroon">
             <div class="container mx-auto px-6 max-w-4xl text-center">
                 <h2 class="text-4xl font-heading font-bold text-db-yellow mb-6">
-                    <!-- GANTI JUDUL TENTANG KAMI DI SINI -->
                     Cita Rasa Asli Banjar di Jakarta
                 </h2>
                 <div class="w-24 h-1.5 bg-db-orange mx-auto mb-6 rounded-full"></div>
                 <p class="text-lg text-db-cream leading-relaxed">
-                    <!-- GANTI DESKRIPSI TENTANG KAMI DI SINI -->
                     Berdiri sejak 2016, Dapoerbanjarjkt hadir untuk melestarikan kuliner khas Kalimantan Selatan. Kami menghubungkan kerinduan para perantau di Jakarta dengan cita rasa otentik tanah kelahiran. Semua hidangan dibuat dengan resep warisan keluarga dan bahan-bahan pilihan.
                 </p>
             </div>
         </section>
 
-        <!-- ===== MENU SECTION ===== -->
         <section id="menu" class="py-20 bg-db-maroon-dark">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-heading font-bold text-db-yellow text-center mb-12">
-                    <!-- GANTI JUDUL MENU DI SINI -->
                     Menu Andalan Kami
                 </h2>
                 
-                <!-- Menu Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Menu Item 1: Soto Banjar -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="Soto Banjar.jpg" alt="Soto Banjar" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Soto Banjar</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Kuah khas dengan suwiran ayam, perkedel, soun, dan lontong/nasi.</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">IDR 35K</span>
                         </div>
                     </div>
-
-                    <!-- Menu Item 2: Bihun Banjar -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="bihun banjar.jpg" alt="Bihun Banjar" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Bihun Banjar</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Bihun goreng lezat dengan bumbu khas Banjar dan topping lengkap.</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">IDR 20K</span>
                         </div>
                     </div>
-
-                    <!-- Menu Item 3: Ketupat Kandangan -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="Ketupat kandanngan.jpg" alt="Ketupat Kandangan" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Ketupat Kandangan</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Ketupat dengan kuah santan gurih dan pilihan lauk (ikan gabus/ayam).</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">Mulai IDR 30K</span>
                         </div>
                     </div>
-                    
-                    <!-- Menu Item 4: Pundut Nasi -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="pundut nasi.jpg" alt="Pundut Nasi" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Pundut Nasi</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Nasi gurih dibungkus daun pisang dengan bumbu habang dan lauk.</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">Mulai IDR 12K</span>
                         </div>
                     </div>
-
-                    <!-- Menu Item 5: Roti Pisang -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="Roti Pisang.jpg" alt="Roti Pisang" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Roti Pisang</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Kue basah tradisional yang lembut dengan isian pisang manis legit.</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">IDR 50K/Box</span>
                         </div>
                     </div>
-
-                    <!-- Menu Item 6: Wadai Ipau -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="wadai ipau.jpg" alt="Wadai Ipau" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Wadai Ipau</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Kue lapis gurih khas Banjar dengan lapisan daging dan sayuran.</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">IDR 50K</span>
                         </div>
                     </div>
-
-                    <!-- Menu Item 7: Satrup Habang -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="sirup habang.jpg" alt="Satrup Habang" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Satrup Habang</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Sirup homemade khas Banjar, 1 Liter. Cocok untuk campuran es.</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">IDR 40K</span>
                         </div>
                     </div>
-                      <!-- Menu Item 8: Wadai Untuk-untuk -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="wadai untuk2.jpg" alt="Wadai Ipau" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Wadai Wadai Untuk untuk</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Camilan goreng khas Banjar dengan isian manis seperti Hunti, Kacang Hijau, Pisang, dan Coklat.</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">IDR 50K</span>
                         </div>
                     </div>
-                    <!-- Menu Item 9: Buras -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="buras.jpg" alt="Buras" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Buras</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Buras lembut berbalut daun pisang disajikan dengan bumbu habang pedas manis khas Banjar dan isian daging giling.</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">Mulai dari 15K</span>
                         </div>
                     </div>
-                      <!-- Menu Item 10: Cireng Ayam -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="Cireng ayam.jpg" alt="C ayam" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Cireng Ayam</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Cireng gurih isi ayam suwir berbumbu habang khas Banjar.</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">Mulai Dari 18K</span>
                         </div>
                     </div>
-                      <!-- Menu Item 11: Nasi Kuning -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="Nasi kuning.jpg" alt="C ayam" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Nasi Kuning</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Nasi kuning pulen dengan lauk khas Banjar: ayam, haruan, dan telur masak habang..</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">Mulai dari 35K</span>
                         </div>
                     </div>
-                     <!-- Menu Item 12: Bingka Mini -->
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <!-- GANTI SUMBER GAMBAR (src) DI SINI -->
                         <img src="Bingka mini.jpg" alt="C ayam" class="w-full h-56 object-cover">
                         <div class="p-6">
-                            <!-- GANTI NAMA MENU DI SINI -->
                             <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Bingka Mini</h3>
-                            <!-- GANTI DESKRIPSI MENU DI SINI -->
                             <p class="text-db-cream mb-4">Kue mini bertekstur lembut dengan rasa manis gurih yang pas di lidah.</p>
-                            <!-- GANTI HARGA MENU DI SINI -->
                             <span class="text-xl font-bold text-db-yellow">IDR 50K</span>
                         </div>
                     </div>
-
-                    <!-- ANDA BISA COPY-PASTE BLOK MENU ITEM DI ATAS UNTUK MENAMBAH MENU BARU -->
-
                 </div>
             </div>
         </section>
 
-        <!-- ===== CARA ORDER SECTION ===== -->
         <section id="order" class="py-20 bg-db-maroon">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl font-heading font-bold text-db-yellow mb-12">
-                    <!-- GANTI JUDUL CARA ORDER DI SINI -->
                     Cara Pemesanan Mudah
                 </h2>
                 <div class="flex flex-col md:flex-row justify-center gap-8">
                     
-                    <!-- Step 1 -->
                     <div class="bg-db-maroon-dark p-8 rounded-lg shadow-lg border border-db-orange/30 flex-1 max-w-sm mx-auto">
                         <div class="text-5xl text-db-orange mb-4">
                             <i class="fas fa-book-open"></i>
                         </div>
-                        <!-- GANTI JUDUL LANGKAH 1 DI SINI -->
                         <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">1. Pilih Menu</h3>
-                        <!-- GANTI DESKRIPSI LANGKAH 1 DI SINI -->
                         <p class="text-db-cream">Lihat daftar menu kami di website dan tentukan pesanan Anda.</p>
                     </div>
                     
-                    <!-- Step 2 -->
                     <div class="bg-db-maroon-dark p-8 rounded-lg shadow-lg border border-db-orange/30 flex-1 max-w-sm mx-auto">
                         <div class="text-5xl text-db-orange mb-4">
                             <i class="fab fa-whatsapp"></i>
                         </div>
-                        <!-- GANTI JUDUL LANGKAH 2 DI SINI -->
                         <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">2. Hubungi WhatsApp</h3>
-                        <!-- GANTI DESKRIPSI LANGKAH 2 DI SINI -->
                         <p class="text-db-cream">Klik tombol "Pesan Sekarang" untuk terhubung langsung dengan admin kami.</p>
                     </div>
                     
-                    <!-- Step 3 -->
                     <div class="bg-db-maroon-dark p-8 rounded-lg shadow-lg border border-db-orange/30 flex-1 max-w-sm mx-auto">
                         <div class="text-5xl text-db-orange mb-4">
                             <i class="fas fa-check-circle"></i>
                         </div>
-                        <!-- GANTI JUDUL LANGKAH 3 DI SINI -->
                         <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">3. Konfirmasi Pesanan</h3>
-                        <!-- GANTI DESKRIPSI LANGKAH 3 DI SINI -->
                         <p class="text-db-cream">Admin kami akan mengonfirmasi pesanan, total, dan alamat pengiriman Anda.</p>
                     </div>
                     
@@ -364,85 +250,129 @@
             </div>
         </section>
         
-        <!-- ===== FEEDBACK SECTION ===== -->
         <section id="feedback" class="py-20 bg-db-maroon-dark text-center">
             <div class="container mx-auto px-6 max-w-4xl">
                 <h2 class="text-4xl font-heading font-bold text-db-yellow mb-6">
-                    <!-- GANTI JUDUL FEEDBACK DI SINI -->
-                    Beri Kami Masukan
+                    Honest Review
                 </h2>
                 <p class="text-lg text-db-cream mb-8 leading-relaxed max-w-3xl mx-auto">
-                    <!-- GANTI DESKRIPSI FEEDBACK DI SINI -->
                     Kepuasan Anda adalah prioritas kami. Kami sangat menghargai masukan dan saran Anda untuk terus meningkatkan kualitas produk dan layanan Dapoerbanjarjkt.
                 </p>
                 
-                <!-- Feedback Image and Button Container -->
                 <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
-                    <!-- Feedback QR Code Image -->
                     <div class="md:w-1/2 max-w-xs mx-auto">
-                        <!-- GANTI SUMBER GAMBAR (src) QR CODE DI SINI -->
-                        <img src="feedback.jpg" alt="Scan QR Code untuk Feedback" class="rounded-lg shadow-lg border-4 border-db-orange">
+                        <img src="feedback.png" alt="Scan QR Code untuk Feedback" class="rounded-lg shadow-lg border-4 border-db-orange">
                     </div>
-                    <!-- Feedback Button -->
                     <div class="md:w-1/2 flex flex-col items-center justify-center">
-                        <!-- GANTI TEKS AJAKAN DI SINI -->
                         <p class="text-db-cream text-lg mb-4">Scan QR di samping atau klik tombol di bawah ini:</p>
-                        <!-- GANTI LINK GOOGLE FORM (href) DI SINI -->
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIa7mPQLMT7Z1kPL9LeuJRI8cOXksQbwUCLGLWjUl4q0kFng/viewform" target="_blank" class="bg-db-yellow text-db-maroon-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-db-orange hover:text-white transform hover:scale-105 transition duration-300 shadow-lg">
-                            <!-- GANTI TEKS TOMBOL FEEDBACK DI SINI -->
-                            Isi Survey Feedback
+                        
+                        <a href="https://www.instagram.com/stories/highlights/17931288949796769/" 
+                           target="_blank" 
+                           data-target="Instagram Story"
+                           class="popup-trigger bg-db-yellow text-db-maroon-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-db-orange hover:text-white transform hover:scale-105 transition duration-300 shadow-lg">
+                            Lihat Honest Review
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== KONTAK & FOOTER ===== -->
+        <section id="social-links" class="py-16 bg-db-maroon">
+            <div class="container mx-auto px-6 max-w-2xl text-center">
+        
+                <h2 class="text-4xl font-heading font-bold text-db-yellow mb-6">
+                    Link Tree
+                </h2>
+        
+                <p class="text-db-cream mb-8">
+                    Terhubung dengan Dapoerbanjarjkt di berbagai platform.
+                </p>
+        
+                <div class="flex flex-col gap-4">
+        
+                    <a href="https://instagram.com/dapoerbanjarjkt"
+                       target="_blank"
+                       data-target="Instagram"
+                       class="popup-trigger w-full bg-db-maroon-dark border border-db-yellow text-db-yellow 
+                              py-4 px-6 rounded-full text-lg font-bold 
+                              shadow-md hover:bg-db-yellow hover:text-db-maroon-dark transition duration-300">
+                        <i class="fab fa-instagram mr-2"></i> Instagram
+                    </a>
+        
+                    <a href="https://tiktok.com/@dapoerbanjarjkt"
+                       target="_blank"
+                       data-target="TikTok"
+                       class="popup-trigger w-full bg-db-maroon-dark border border-db-yellow text-db-yellow 
+                              py-4 px-6 rounded-full text-lg font-bold 
+                              shadow-md hover:bg-db-yellow hover:text-db-maroon-dark transition duration-300">
+                        <i class="fab fa-tiktok mr-2"></i> TikTok
+                    </a>
+        
+                    <a href="https://tokopedia.com/dapoerbanjarjkt"
+                       target="_blank"
+                       data-target="Tokopedia"
+                       class="popup-trigger w-full bg-db-maroon-dark border border-db-yellow text-db-yellow 
+                              py-4 px-6 rounded-full text-lg font-bold 
+                              shadow-md hover:bg-db-yellow hover:text-db-maroon-dark transition duration-300">
+                        <i class="fa-solid fa-bag-shopping mr-2"></i> Tokopedia
+                    </a>
+        
+                    <a href="https://wa.me/6285211966962"
+                       target="_blank"
+                       data-target="WhatsApp"
+                       class="popup-trigger w-full bg-db-yellow text-db-maroon-dark 
+                              py-4 px-6 rounded-full text-lg font-bold 
+                              shadow-md hover:bg-db-orange hover:text-white transition duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp Order
+                    </a>
+        
+                    <a href="https://wa.me/6285216010847"
+                       target="_blank"
+                       data-target="WhatsApp"
+                       class="popup-trigger w-full bg-db-yellow text-db-maroon-dark 
+                              py-4 px-6 rounded-full text-lg font-bold 
+                              shadow-md hover:bg-db-orange hover:text-white transition duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp Order 2
+                    </a>
+        
+                </div>
+            </div>
+        </section>
+
         <footer id="kontak" class="py-20 bg-db-maroon border-t-4 border-db-orange">
             <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
                 
-                <!-- Kolom 1: About -->
                 <div>
-                    <!-- GANTI JUDUL FOOTER DI SINI -->
                     <h3 class="text-2xl font-heading font-bold text-db-yellow mb-4">Dapoerbanjarjkt</h3>
-                    <!-- GANTI DESKRIPSI SINGKAT FOOTER DI SINI -->
                     <p class="text-db-cream/80">
                         Menyajikan kuliner otentik Khas Banjar (Kalimantan Selatan) sejak 2016. Obati rindu masakan kampung halaman Anda.
                     </p>
                 </div>
                 
-                <!-- Kolom 2: Kontak & Lokasi -->
                 <div>
-                    <!-- GANTI JUDUL KONTAK FOOTER DI SINI -->
                     <h3 class="text-2xl font-heading font-bold text-db-yellow mb-4">Hubungi Kami</h3>
                     <ul class="space-y-3 text-db-cream/80">
-                        <!-- GANTI LOKASI DI SINI -->
-                        <li><li>
-  <a href="https://www.google.com/maps/place/Dapoer+Banjar+Jakarta/@-6.236952,106.8622325,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f3fcc7b0cab9:0xea6a38a4955eece2!8m2!3d-6.236952!4d106.8622325!16s%2Fg%2F11ql4c_7g2?entry=ttu&g_ep=EgoyMDI1MTAyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="hover:text-db-yellow flex items-center gap-2">
-    <i class="fas fa-map-marker-alt text-db-orange w-6"></i>
-    Dapoer Banjar Jakarta, Tebet
-  </a>
-</li>
-
-                            <!-- GANTI LINK WHATSAPP (href) DAN NOMOR (teks) DI SINI -->
-                            <a href="https://wa.me/6285211966962" target="_blank" class="hover:text-db-yellow">
+                        <li>
+                            <a href="https://www.google.com/maps/place/Dapoer+Banjar+Jakarta/@-6.236952,106.8622325,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f3fcc7b0cab9:0xea6a38a4955eece2!8m2!3d-6.236952!4d106.8622325!16s%2Fg%2F11ql4c_7g2?entry=ttu&g_ep=EgoyMDI1MTAyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="hover:text-db-yellow flex items-center gap-2 justify-center md:justify-start">
+                                <i class="fas fa-map-marker-alt text-db-orange w-6"></i>
+                                Dapoer Banjar Jakarta, Tebet
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/6285211966962" target="_blank" data-target="WhatsApp" class="popup-trigger hover:text-db-yellow flex items-center gap-2 justify-center md:justify-start">
                                 <i class="fab fa-whatsapp text-db-orange w-6"></i> 0852-1196-6962
                             </a>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Kolom 3: Social Media -->
                 <div>
-                    <!-- GANTI JUDUL SOSIAL MEDIA DI SINI -->
                     <h3 class="text-2xl font-heading font-bold text-db-yellow mb-4">Ikuti Kami</h3>
                     <div class="flex justify-center md:justify-start space-x-6">
-                        <!-- GANTI LINK INSTAGRAM (href) DI SINI -->
-                        <a href="https://www.instagram.com/dapoerbanjar_jkt?igsh=MXZrMnlpcHoyYmxwOA==" target="_blank" class="text-db-cream text-3xl hover:text-db-yellow transition duration-300">
+                        <a href="https://www.instagram.com/dapoerbanjar_jkt?igsh=MXZrMnlpcHoyYmxwOA==" target="_blank" data-target="Instagram" class="popup-trigger text-db-cream text-3xl hover:text-db-yellow transition duration-300">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <!-- GANTI LINK TIKTOK (href) DI SINI -->
-                        <a href="https://www.tiktok.com/@dapoerbanjar_jkt" target="_blank" class="text-db-cream text-3xl hover:text-db-yellow transition duration-300">
+                        <a href="https://www.tiktok.com/@dapoerbanjar_jkt" target="_blank" data-target="TikTok" class="popup-trigger text-db-cream text-3xl hover:text-db-yellow transition duration-300">
                             <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
@@ -450,23 +380,49 @@
 
             </div>
             
-            <!-- Copyright -->
             <div class="text-center text-db-cream/60 pt-12 mt-12 border-t border-db-orange/20">
-                <!-- GANTI TEKS COPYRIGHT DI SINI -->
                 © 2025 Dapoerbanjarjkt. Dibuat dengan cinta di Jakarta.
             </div>
         </footer>
     </main>
 
-    <!-- JavaScript untuk Mobile Menu -->
+    <div id="exit-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div id="exit-modal-overlay" class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity"></div>
+        
+        <div class="relative bg-db-cream text-db-maroon-dark rounded-xl shadow-2xl w-full max-w-sm overflow-hidden transform transition-all scale-100 border-2 border-db-yellow">
+            <div class="bg-db-maroon p-4 text-center">
+                <div class="w-16 h-16 bg-db-cream rounded-full flex items-center justify-center mx-auto mb-2 text-db-orange text-3xl shadow-lg">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-db-yellow">Konfirmasi</h3>
+            </div>
+            
+            <div class="p-6 text-center">
+                <p class="text-lg font-medium mb-2">
+                    Kamu akan keluar dari web dan di arahkan ke <span id="modal-destination" class="font-bold text-db-maroon">Halaman Eksternal</span>
+                </p>
+                <p class="text-sm text-gray-600">Apakah kamu ingin melanjutkan?</p>
+            </div>
+            
+            <div class="flex border-t border-db-maroon/10">
+                <button id="btn-batal" class="flex-1 py-4 font-bold text-db-maroon hover:bg-gray-100 transition duration-200 border-r border-db-maroon/10">
+                    Tidak
+                </button>
+                <button id="btn-lanjut" class="flex-1 py-4 font-bold text-white bg-green-600 hover:bg-green-700 transition duration-200">
+                    Lanjut
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // 1. Script Mobile Menu
         const menuBtn = document.getElementById('menu-btn');
         const menuLinks = document.getElementById('menu-links');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
         menuBtn.addEventListener('click', () => {
             menuLinks.classList.toggle('hidden');
-            // Ganti ikon burger menjadi X dan sebaliknya
             if (menuLinks.classList.contains('hidden')) {
                 menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             } else {
@@ -474,15 +430,56 @@
             }
         });
 
-        // Tutup menu saat link mobile di-klik (untuk navigasi di halaman yang sama)
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menuLinks.classList.add('hidden');
                 menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
+
+        // 2. Script Popup Universal
+        const exitModal = document.getElementById('exit-modal');
+        const exitOverlay = document.getElementById('exit-modal-overlay');
+        const btnBatal = document.getElementById('btn-batal');
+        const btnLanjut = document.getElementById('btn-lanjut');
+        const modalDestination = document.getElementById('modal-destination');
+        
+        // Ambil semua tombol dengan class "popup-trigger"
+        const triggerButtons = document.querySelectorAll('.popup-trigger');
+        
+        let targetUrl = ''; 
+
+        // Fungsi Buka Modal
+        triggerButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                targetUrl = this.href; 
+                
+                // Ambil nama tujuan dari atribut data-target
+                const destinationName = this.getAttribute('data-target') || 'Halaman Lain';
+                
+                // Update teks di dalam modal
+                modalDestination.textContent = destinationName;
+
+                // Tampilkan modal
+                exitModal.classList.remove('hidden'); 
+            });
+        });
+
+        // Fungsi Tutup Modal
+        const closeModal = () => {
+            exitModal.classList.add('hidden');
+        };
+
+        btnBatal.addEventListener('click', closeModal);
+        exitOverlay.addEventListener('click', closeModal);
+
+        // Fungsi Lanjut ke Link
+        btnLanjut.addEventListener('click', () => {
+            window.open(targetUrl, '_blank'); 
+            closeModal();
+        });
     </script>
 
 </body>
 </html>
-
