@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dapoerbanjarjkt - Kuliner Khas Banjar Asli</title>
     
+    <link rel="icon" href="WEB LOGO.png" type="image/png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,11 +39,11 @@
 
     <header class="bg-db-maroon/90 backdrop-blur-sm sticky top-0 z-50 shadow-lg border-b border-db-orange/20">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-3xl font-heading font-bold text-db-yellow">
+            <a href="#home" class="text-2xl md:text-3xl font-heading font-bold text-db-yellow">
                 Dapoerbanjarjkt
             </a>
             
-            <div class="hidden md:flex space-x-6">
+            <div class="hidden md:flex space-x-6 items-center">
                 <a href="#home" class="text-db-cream hover:text-db-yellow transition duration-300">Home</a>
                 <a href="#menu" class="text-db-cream hover:text-db-yellow transition duration-300">Menu</a>
                 <a href="#order" class="text-db-cream hover:text-db-yellow transition duration-300">Cara Order</a>
@@ -68,12 +70,11 @@
     </header>
 
     <main>
-      <section id="home" class="h-screen min-h-[700px] relative flex items-center justify-center text-center text-white">
-    <div class="absolute inset-0 bg-db-maroon-dark bg-no-repeat bg-center" style="background-image: url('GGG.png'); background-size: cover;"></div>
+      <section id="home" class="h-screen min-h-[600px] relative flex items-center justify-center text-center text-white">
+        <div class="absolute inset-0 bg-db-maroon-dark bg-no-repeat bg-center" style="background-image: url('GGG.png'); background-size: cover;"></div>
     
-    <div class="absolute inset-0 bg-black/80"></div>
+        <div class="absolute inset-0 bg-black/80"></div>
     
-            
             <div class="relative z-10 p-6 max-w-3xl">
                 <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-white drop-shadow-lg mb-4">
                     Kuliner Khas Banjar
@@ -109,106 +110,145 @@
         </section>
 
         <section id="menu" class="py-20 bg-db-maroon-dark">
-            <div class="container mx-auto px-6">
+            <div class="container mx-auto px-4 md:px-6">
                 <h2 class="text-4xl font-heading font-bold text-db-yellow text-center mb-12">
                     Menu Andalan Kami
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
+                    
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Soto Banjar.jpg" alt="Soto Banjar" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Soto Banjar</h3>
-                            <p class="text-db-cream mb-4">Kuah khas dengan suwiran ayam, perkedel, soun, dan lontong/nasi.</p>
-                            <span class="text-xl font-bold text-db-yellow">IDR 35K</span>
+                        <img src="bingka.jpg" alt="Aneka Bingka Besar" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Aneka Bingka Besar</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Bingka besar dengan berbagai varian rasa.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 65K-85K</span>
                         </div>
                     </div>
+
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="bihun banjar.jpg" alt="Bihun Banjar" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Bihun Banjar</h3>
-                            <p class="text-db-cream mb-4">Bihun goreng lezat dengan bumbu khas Banjar dan topping lengkap.</p>
-                            <span class="text-xl font-bold text-db-yellow">IDR 20K</span>
+                        <img src="Bingka Ori.png" alt="Bingka Original" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Bingka Original</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Tekstur dan rasa klasik yang lembut dan creamy dengan manis yang pas.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 65K</span>
                         </div>
                     </div>
+
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Ketupat kandanngan.jpg" alt="Ketupat Kandangan" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Ketupat Kandangan</h3>
-                            <p class="text-db-cream mb-4">Ketupat dengan kuah santan gurih dan pilihan lauk (ikan gabus/ayam).</p>
-                            <span class="text-xl font-bold text-db-yellow">Mulai IDR 30K</span>
+                        <img src="Bingka Keju.png" alt="Bingka Keju" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Bingka Keju</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Perpaduan lembutnya bingka dengan gurih keju yang rich dan creamy.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 75K</span>
                         </div>
                     </div>
+
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="pundut nasi.jpg" alt="Pundut Nasi" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Pundut Nasi</h3>
-                            <p class="text-db-cream mb-4">Nasi gurih dibungkus daun pisang dengan bumbu habang dan lauk.</p>
-                            <span class="text-xl font-bold text-db-yellow">Mulai IDR 12K</span>
+                        <img src="Soto Banjar.jpg" alt="Soto Banjar" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Soto Banjar</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Kuah khas dengan suwiran ayam, perkedel, soun, dan lontong/nasi.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 35K</span>
                         </div>
                     </div>
+
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Roti Pisang.jpg" alt="Roti Pisang" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Roti Pisang</h3>
-                            <p class="text-db-cream mb-4">Kue basah tradisional yang lembut dengan isian pisang manis legit.</p>
-                            <span class="text-xl font-bold text-db-yellow">IDR 50K/Box</span>
+                        <img src="bihun banjar.jpg" alt="Bihun Banjar" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Bihun Banjar</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Bihun goreng lezat dengan bumbu khas Banjar dan topping lengkap.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 20K</span>
                         </div>
                     </div>
+
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="wadai ipau.jpg" alt="Wadai Ipau" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Wadai Ipau</h3>
-                            <p class="text-db-cream mb-4">Kue lapis gurih khas Banjar dengan lapisan daging dan sayuran.</p>
-                            <span class="text-xl font-bold text-db-yellow">IDR 50K</span>
+                        <img src="Ketupat kandanngan.jpg" alt="Ketupat Kandangan" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Ketupat Kandangan</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Ketupat dengan kuah santan gurih dan pilihan lauk (ikan gabus/ayam).</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">Mulai IDR 30K</span>
                         </div>
                     </div>
+
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="sirup habang.jpg" alt="Satrup Habang" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Satrup Habang</h3>
-                            <p class="text-db-cream mb-4">Sirup homemade khas Banjar, 1 Liter. Cocok untuk campuran es.</p>
-                            <span class="text-xl font-bold text-db-yellow">IDR 40K</span>
+                        <img src="pundut nasi.jpg" alt="Pundut Nasi" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Pundut Nasi</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Nasi gurih dibungkus daun pisang dengan bumbu habang dan lauk.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">Mulai IDR 12K</span>
                         </div>
                     </div>
+
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="wadai untuk2.jpg" alt="Wadai Ipau" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Wadai Wadai Untuk untuk</h3>
-                            <p class="text-db-cream mb-4">Camilan goreng khas Banjar dengan isian manis seperti Hunti, Kacang Hijau, Pisang, dan Coklat.</p>
-                            <span class="text-xl font-bold text-db-yellow">IDR 50K</span>
+                        <img src="Roti Pisang.jpg" alt="Roti Pisang" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Roti Pisang</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Kue basah tradisional yang lembut dengan isian pisang manis legit.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 50K/Box</span>
                         </div>
                     </div>
+
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="buras.jpg" alt="Buras" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Buras</h3>
-                            <p class="text-db-cream mb-4">Buras lembut berbalut daun pisang disajikan dengan bumbu habang pedas manis khas Banjar dan isian daging giling.</p>
-                            <span class="text-xl font-bold text-db-yellow">Mulai dari 15K</span>
+                        <img src="wadai ipau.jpg" alt="Wadai Ipau" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Wadai Ipau</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Kue lapis gurih khas Banjar dengan lapisan daging dan sayuran.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 50K</span>
                         </div>
                     </div>
+
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Cireng ayam.jpg" alt="C ayam" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Cireng Ayam</h3>
-                            <p class="text-db-cream mb-4">Cireng gurih isi ayam suwir berbumbu habang khas Banjar.</p>
-                            <span class="text-xl font-bold text-db-yellow">Mulai Dari 18K</span>
+                        <img src="sirup habang.jpg" alt="Satrup Habang" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Satrup Habang</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Sirup homemade khas Banjar, 1 Liter. Cocok untuk campuran es.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 40K</span>
                         </div>
                     </div>
+
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Nasi kuning.jpg" alt="C ayam" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Nasi Kuning</h3>
-                            <p class="text-db-cream mb-4">Nasi kuning pulen dengan lauk khas Banjar: ayam, haruan, dan telur masak habang..</p>
-                            <span class="text-xl font-bold text-db-yellow">Mulai dari 35K</span>
+                        <img src="wadai untuk2.jpg" alt="Wadai Untuk untuk" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Wadai Untuk-untuk</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Camilan goreng khas Banjar dengan isian manis seperti Hunti, Kacang Hijau, Pisang, Coklat.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 50K</span>
                         </div>
                     </div>
+
                     <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Bingka mini.jpg" alt="C ayam" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">Bingka Mini</h3>
-                            <p class="text-db-cream mb-4">Kue mini bertekstur lembut dengan rasa manis gurih yang pas di lidah.</p>
-                            <span class="text-xl font-bold text-db-yellow">IDR 50K</span>
+                        <img src="buras.jpg" alt="Buras" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Buras</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Buras lembut berbalut daun pisang disajikan dengan bumbu habang pedas manis.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">Mulai 15K</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <img src="Cireng ayam.jpg" alt="Cireng ayam" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Cireng Ayam</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Cireng gurih isi ayam suwir berbumbu habang khas Banjar.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">Mulai 18K</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <img src="Nasi kuning.jpg" alt="Nasi kuning" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Nasi Kuning</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Nasi kuning pulen dengan lauk khas Banjar: ayam, haruan, dan telur masak habang.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">Mulai 35K</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
+                        <img src="Bingka mini.jpg" alt="Bingka mini" class="w-full h-32 md:h-56 object-cover">
+                        <div class="p-3 md:p-6">
+                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Bingka Mini</h3>
+                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Kue mini bertekstur lembut dengan rasa manis gurih yang pas di lidah.</p>
+                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 50K</span>
                         </div>
                     </div>
                 </div>
@@ -353,7 +393,10 @@
                     <h3 class="text-2xl font-heading font-bold text-db-yellow mb-4">Hubungi Kami</h3>
                     <ul class="space-y-3 text-db-cream/80">
                         <li>
-                            <a href="https://www.google.com/maps/place/Dapoer+Banjar+Jakarta/@-6.236952,106.8622325,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f3fcc7b0cab9:0xea6a38a4955eece2!8m2!3d-6.236952!4d106.8622325!16s%2Fg%2F11ql4c_7g2?entry=ttu&g_ep=EgoyMDI1MTAyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="hover:text-db-yellow flex items-center gap-2 justify-center md:justify-start">
+                            <a href="https://www.google.com/maps/place/Dapoer+Banjar+Jakarta/@-6.236952,106.8622325,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f3fcc7b0cab9:0xea6a38a4955eece2!8m2!3d-6.236952!4d106.8622325!16s%2Fg%2F11ql4c_7g2?entry=ttu&g_ep=EgoyMDI1MTAyOC4wIKXMDSoASAFQAw%3D%3D" 
+                               target="_blank" 
+                               data-target="Google Maps"
+                               class="popup-trigger hover:text-db-yellow flex items-center gap-2 justify-center md:justify-start">
                                 <i class="fas fa-map-marker-alt text-db-orange w-6"></i>
                                 Dapoer Banjar Jakarta, Tebet
                             </a>
