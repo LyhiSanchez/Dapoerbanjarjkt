@@ -2,527 +2,1134 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dapoerbanjarjkt - Kuliner Khas Banjar Asli</title>
-    
-    <link rel="icon" href="WEB LOGO.png" type="image/png">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Dapoer Banjar Jakarta — Warisan Kuliner & Hampers Oriental</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+    <!-- Google Fonts: Cormorant Garamond (Oriental Regal Serif) & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        'db-maroon': '#6B0F1A',
-                        'db-maroon-dark': '#4A0404',
-                        'db-yellow': '#FFC107',
-                        'db-orange': '#E67E22',
-                        'db-cream': '#FFF5E1',
-                    },
                     fontFamily: {
-                        'sans': ['Lato', 'sans-serif'],
-                        'heading': ['Poppins', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        display: ['"Cinzel"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        maroon: {
+                            950: '#2E0608',
+                            900: '#4A0D10',
+                            800: '#6E1418',
+                            700: '#8B1E24',
+                            600: '#A5282E',
+                            100: '#FCE8E9',
+                        },
+                        gold: {
+                            600: '#B68F24',
+                            500: '#D4AF37',
+                            400: '#E5C158',
+                            300: '#F2DC8C',
+                            100: '#FBF5E2',
+                        },
+                        parchment: {
+                            50: '#FDFBF7',
+                            100: '#F6F0E4',
+                            200: '#EBE0CC',
+                        }
                     }
                 }
             }
         }
     </script>
-</head>
-<body class="bg-db-maroon-dark text-db-cream font-sans antialiased relative">
 
-    <header class="bg-db-maroon/90 backdrop-blur-sm sticky top-0 z-50 shadow-lg border-b border-db-orange/20">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl md:text-3xl font-heading font-bold text-db-yellow">
-                Dapoerbanjarjkt
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            background-color: #FDFBF7;
+            color: #2E0608;
+            overflow-x: hidden;
+        }
+        /* Subtle Oriental Lattice Pattern Background */
+        .bg-oriental-pattern {
+            background-image: radial-gradient(#D4AF37 0.65px, transparent 0.65px), radial-gradient(#D4AF37 0.65px, transparent 0.65px);
+            background-size: 28px 28px;
+            background-position: 0 0, 14px 14px;
+        }
+        /* Maroon Silk Pattern */
+        .bg-maroon-silk {
+            background: radial-gradient(circle at 20% 20%, #8B1E24 0%, #6E1418 45%, #4A0D10 100%);
+        }
+        /* Oriental Gold Frame Card */
+        .oriental-card {
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            box-shadow: 0 6px 20px -6px rgba(74, 13, 16, 0.12);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .oriental-card:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 12px 26px -8px rgba(110, 20, 24, 0.2);
+        }
+        /* Gold Foil Shimmer Text */
+        .text-gold-foil {
+            background: linear-gradient(135deg, #F2DC8C 0%, #D4AF37 50%, #FCE8A6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Hide Scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Bottom Sheet Transitions */
+        .sheet-open { transform: translateY(0%); }
+        .sheet-closed { transform: translateY(105%); }
+    </style>
+</head>
+<body class="pb-28 selection:bg-maroon-800 selection:text-gold-300">
+
+    <!-- 1. TOP ORIENTAL IMPERIAL ANNOUNCEMENT BAR -->
+    <div class="bg-maroon-950 text-gold-300 border-b border-gold-500/30 px-3 py-1.5 text-center text-[11px] sm:text-xs font-medium flex items-center justify-center gap-2">
+        <span class="text-gold-400">❖</span>
+        <span>Pemesanan Fresh Panggang Setiap Hari • Tersedia Kemasan Hampers Oriental Eksklusif</span>
+        <span class="text-gold-400">❖</span>
+    </div>
+
+    <!-- 2. STICKY ORIENTAL HEADER -->
+    <header class="sticky top-0 z-30 bg-maroon-900/95 backdrop-blur-md border-b border-gold-500/40 text-parchment-50 shadow-md">
+        <div class="max-w-6xl mx-auto px-3.5 py-2.5 flex items-center justify-between gap-3">
+            <!-- Brand Logo & Oriental Seal -->
+            <a href="#" onclick="resetFilters()" class="flex items-center gap-2.5 group">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-maroon-800 border-2 border-gold-500 p-0.5 flex items-center justify-center overflow-hidden shadow-inner relative">
+                    <img src="WEB LOGO.png" alt="Dapoer Banjar" 
+                         onerror="this.src='GGG.png'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}"
+                         class="w-full h-full object-contain rounded-lg">
+                    <!-- Oriental Seal Stamp Fallback SVG -->
+                    <div class="hidden w-full h-full bg-maroon-700 flex flex-col items-center justify-center text-gold-400 font-display text-[10px] leading-none border border-gold-400/50 rounded-md">
+                        <span>福</span>
+                        <span class="text-[8px] font-bold">DBJ</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="font-display font-bold text-sm sm:text-base tracking-wider text-gold-300">DAPOER BANJAR</span>
+                        <span class="text-[9px] bg-gold-500 text-maroon-950 font-extrabold px-1.5 py-0.5 rounded uppercase tracking-widest">JKT</span>
+                    </div>
+                    <p class="text-[10px] text-parchment-200/80 font-medium tracking-wide">Heritage Wadai & Oriental Hampers</p>
+                </div>
             </a>
-            
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="#home" class="text-db-cream hover:text-db-yellow transition duration-300">Home</a>
-                <a href="#menu" class="text-db-cream hover:text-db-yellow transition duration-300">Menu</a>
-                <a href="#order" class="text-db-cream hover:text-db-yellow transition duration-300">Cara Order</a>
-                <a href="#feedback" class="text-db-cream hover:text-db-yellow transition duration-300">Feedback</a>
-                <a href="#kontak" class="bg-db-yellow text-db-maroon-dark font-bold py-2 px-4 rounded-full hover:bg-db-orange hover:text-white transition duration-300">
-                    Kontak Kami
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-parchment-100">
+                <a href="#beranda" class="hover:text-gold-400 transition-colors">Beranda</a>
+                <a href="#katalog" class="hover:text-gold-400 transition-colors">Menu Signature</a>
+                <a href="#hampers-builder" class="hover:text-gold-400 transition-colors flex items-center gap-1">
+                    <span class="text-gold-400">❖</span> Custom Hampers
                 </a>
+                <a href="#testimoni" class="hover:text-gold-400 transition-colors">Testimoni</a>
+            </nav>
+
+            <!-- Search & Cart Action -->
+            <div class="flex items-center gap-2">
+                <!-- Search Input (Desktop) -->
+                <div class="hidden sm:block relative">
+                    <input type="search" id="desktop-search" oninput="handleSearch(this.value)" placeholder="Cari Bingka, Soto, Wadai..." 
+                           class="w-44 lg:w-56 pl-8 pr-3 py-1.5 rounded-full bg-maroon-950/80 border border-gold-500/40 text-xs text-parchment-50 placeholder-parchment-200/50 focus:outline-none focus:border-gold-400">
+                    <svg class="w-3.5 h-3.5 text-gold-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                    </svg>
+                </div>
+
+                <!-- Mobile Search Toggle -->
+                <button onclick="toggleMobileSearch()" aria-label="Cari Menu" class="sm:hidden w-9 h-9 rounded-full bg-maroon-950/90 border border-gold-500/40 flex items-center justify-center text-gold-300 active:scale-95">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                    </svg>
+                </button>
+
+                <!-- Oriental Gold Cart Button -->
+                <button onclick="openCartSheet()" class="bg-gradient-to-r from-gold-500 to-gold-400 text-maroon-950 hover:brightness-105 active:scale-95 transition-all px-3.5 py-1.5 rounded-full text-xs font-extrabold flex items-center gap-1.5 shadow-sm border border-gold-300">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                    </svg>
+                    <span class="hidden xs:inline">Pesanan</span>
+                    <span id="header-cart-badge" class="bg-maroon-900 text-gold-300 text-[10px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
             </div>
-            
-            <button id="menu-btn" class="md:hidden text-db-yellow text-2xl z-50">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-        
-        <div id="menu-links" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-db-maroon flex flex-col justify-center items-center space-y-8 text-2xl">
-            <a href="#home" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Home</a>
-            <a href="#menu" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Menu</a>
-            <a href="#order" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Cara Order</a>
-            <a href="#feedback" class="mobile-link text-db-cream hover:text-db-yellow transition duration-300">Feedback</a>
-            <a href="#kontak" class="mobile-link bg-db-yellow text-db-maroon-dark font-bold py-3 px-6 rounded-full hover:bg-db-orange hover:text-white transition duration-300">
-                Kontak Kami
-            </a>
+        </div>
+
+        <!-- Expandable Mobile Search Bar -->
+        <div id="mobile-search-box" class="hidden sm:hidden px-3.5 pb-2.5">
+            <div class="relative">
+                <input type="search" id="mobile-search-input" oninput="handleSearch(this.value)" placeholder="Ketik Bingka Keju, Soto Banjar, Cireng..." 
+                       class="w-full pl-9 pr-14 py-2 rounded-xl bg-maroon-950 border border-gold-500/50 text-xs text-parchment-50 placeholder-parchment-200/50 focus:outline-none">
+                <svg class="w-4 h-4 text-gold-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                </svg>
+                <button onclick="resetFilters()" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-gold-300 bg-maroon-800 px-2 py-0.5 rounded border border-gold-500/30">Reset</button>
+            </div>
         </div>
     </header>
 
-    <main>
-      <section id="home" class="h-screen min-h-[600px] relative flex items-center justify-center text-center text-white">
-        <div class="absolute inset-0 bg-db-maroon-dark bg-no-repeat bg-center" style="background-image: url('GGG.png'); background-size: cover;"></div>
-    
-        <div class="absolute inset-0 bg-black/80"></div>
-    
-            <div class="relative z-10 p-6 max-w-3xl">
-                <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-white drop-shadow-lg mb-4">
-                    Kuliner Khas Banjar
-                </h1>
-                <p class="text-xl md:text-2xl text-db-cream mb-8 font-light drop-shadow-md">
-                    Pesan sekarang, obati rindu masakan kampung halaman. Cita rasa otentik Kalimantan Selatan di Jakarta.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#menu" class="bg-db-yellow text-db-maroon-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-db-orange hover:text-white transform hover:scale-105 transition duration-300 shadow-lg">
-                        Lihat Menu
-                    </a>
-                    
-                    <a href="https://wa.me/6285211966962" 
-                       target="_blank" 
-                       data-target="WhatsApp"
-                       class="popup-trigger bg-transparent border-2 border-db-yellow text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-db-yellow hover:text-db-maroon-dark transform hover:scale-105 transition duration-300 shadow-lg">
-                        Pesan Sekarang (WA)
-                    </a>
-                </div>
-            </div>
-        </section>
+    <!-- 3. IMPERIAL MAROON ORIENTAL HERO SECTION -->
+    <section id="beranda" class="bg-maroon-silk text-parchment-50 relative overflow-hidden border-b-2 border-gold-500">
+        <!-- Decorative Oriental Lattice Corner Ornaments (SVG) -->
+        <svg class="w-16 h-16 sm:w-24 sm:h-24 text-gold-500/25 absolute top-2 left-2 pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 95 V5 H95 M5 25 H25 V5 M5 45 H45 V5 M25 25 H65 V65 H25 Z"/>
+        </svg>
+        <svg class="w-16 h-16 sm:w-24 sm:h-24 text-gold-500/25 absolute top-2 right-2 pointer-events-none scale-x-[-1]" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 95 V5 H95 M5 25 H25 V5 M5 45 H45 V5 M25 25 H65 V65 H25 Z"/>
+        </svg>
 
-        <section id="about" class="py-20 bg-db-maroon">
-            <div class="container mx-auto px-6 max-w-4xl text-center">
-                <h2 class="text-4xl font-heading font-bold text-db-yellow mb-6">
-                    Cita Rasa Asli Banjar di Jakarta
-                </h2>
-                <div class="w-24 h-1.5 bg-db-orange mx-auto mb-6 rounded-full"></div>
-                <p class="text-lg text-db-cream leading-relaxed">
-                    Berdiri sejak 2016, Dapoerbanjarjkt hadir untuk melestarikan kuliner khas Kalimantan Selatan. Kami menghubungkan kerinduan para perantau di Jakarta dengan cita rasa otentik tanah kelahiran. Semua hidangan dibuat dengan resep warisan keluarga dan bahan-bahan pilihan.
-                </p>
-            </div>
-        </section>
-
-        <section id="menu" class="py-20 bg-db-maroon-dark">
-            <div class="container mx-auto px-4 md:px-6">
-                <h2 class="text-4xl font-heading font-bold text-db-yellow text-center mb-12">
-                    Menu Andalan Kami
-                </h2>
-                
-                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
-                    
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="bingka.jpg" alt="Aneka Bingka Besar" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Aneka Bingka Besar</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Bingka besar dengan berbagai varian rasa.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 65K-85K</span>
-                        </div>
+        <div class="max-w-6xl mx-auto px-3.5 py-6 sm:py-10 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                <!-- Left Hero Copy -->
+                <div class="md:col-span-7 space-y-3.5 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-maroon-950/70 border border-gold-500/50 text-gold-300 text-[11px] font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                        <span>Resep Warisan Asli Banjarmasin • 100% Halal & Tanpa Pengawet</span>
                     </div>
 
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Bingka Ori.png" alt="Bingka Original" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Bingka Original</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Tekstur dan rasa klasik yang lembut dan creamy dengan manis yang pas.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 65K</span>
-                        </div>
-                    </div>
+                    <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+                        Kemewahan Hantaran <span class="text-gold-foil italic">Oriental</span> & Kelezatan Wadai Banjar Asli
+                    </h1>
 
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Bingka Keju.png" alt="Bingka Keju" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Bingka Keju</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Perpaduan lembutnya bingka dengan gurih keju yang rich dan creamy.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 75K</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Soto Banjar.jpg" alt="Soto Banjar" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Soto Banjar</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Kuah khas dengan suwiran ayam, perkedel, soun, dan lontong/nasi.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 35K</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="bihun banjar.jpg" alt="Bihun Banjar" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Bihun Banjar</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Bihun goreng lezat dengan bumbu khas Banjar dan topping lengkap.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 20K</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Ketupat kandanngan.jpg" alt="Ketupat Kandangan" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Ketupat Kandangan</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Ketupat dengan kuah santan gurih dan pilihan lauk (ikan gabus/ayam).</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">Mulai IDR 30K</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="pundut nasi.jpg" alt="Pundut Nasi" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Pundut Nasi</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Nasi gurih dibungkus daun pisang dengan bumbu habang dan lauk.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">Mulai IDR 12K</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Roti Pisang.jpg" alt="Roti Pisang" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Roti Pisang</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Kue basah tradisional yang lembut dengan isian pisang manis legit.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 50K/Box</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="wadai ipau.jpg" alt="Wadai Ipau" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Wadai Ipau</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Kue lapis gurih khas Banjar dengan lapisan daging dan sayuran.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 50K</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="sirup habang.jpg" alt="Satrup Habang" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Satrup Habang</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Sirup homemade khas Banjar, 1 Liter. Cocok untuk campuran es.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 40K</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="wadai untuk2.jpg" alt="Wadai Untuk untuk" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Wadai Untuk-untuk</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Camilan goreng khas Banjar dengan isian manis seperti Hunti, Kacang Hijau, Pisang, Coklat.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 50K</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="buras.jpg" alt="Buras" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Buras</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Buras lembut berbalut daun pisang disajikan dengan bumbu habang pedas manis.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">Mulai 15K</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Cireng ayam.jpg" alt="Cireng ayam" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Cireng Ayam</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Cireng gurih isi ayam suwir berbumbu habang khas Banjar.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">Mulai 18K</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Nasi kuning.jpg" alt="Nasi kuning" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Nasi Kuning</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Nasi kuning pulen dengan lauk khas Banjar: ayam, haruan, dan telur masak habang.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">Mulai 35K</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-db-maroon rounded-lg overflow-hidden shadow-xl border border-db-orange/30 transform transition duration-500 hover:scale-105 hover:shadow-db-yellow/20">
-                        <img src="Bingka mini.jpg" alt="Bingka mini" class="w-full h-32 md:h-56 object-cover">
-                        <div class="p-3 md:p-6">
-                            <h3 class="text-lg md:text-2xl font-heading font-bold text-db-yellow mb-1 md:mb-2 leading-tight">Bingka Mini</h3>
-                            <p class="text-xs md:text-base text-db-cream mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Kue mini bertekstur lembut dengan rasa manis gurih yang pas di lidah.</p>
-                            <span class="text-sm md:text-xl font-bold text-db-yellow block">IDR 50K</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="order" class="py-20 bg-db-maroon">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-heading font-bold text-db-yellow mb-12">
-                    Cara Pemesanan Mudah
-                </h2>
-                <div class="flex flex-col md:flex-row justify-center gap-8">
-                    
-                    <div class="bg-db-maroon-dark p-8 rounded-lg shadow-lg border border-db-orange/30 flex-1 max-w-sm mx-auto">
-                        <div class="text-5xl text-db-orange mb-4">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">1. Pilih Menu</h3>
-                        <p class="text-db-cream">Lihat daftar menu kami di website dan tentukan pesanan Anda.</p>
-                    </div>
-                    
-                    <div class="bg-db-maroon-dark p-8 rounded-lg shadow-lg border border-db-orange/30 flex-1 max-w-sm mx-auto">
-                        <div class="text-5xl text-db-orange mb-4">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">2. Hubungi WhatsApp</h3>
-                        <p class="text-db-cream">Klik tombol "Pesan Sekarang" untuk terhubung langsung dengan admin kami.</p>
-                    </div>
-                    
-                    <div class="bg-db-maroon-dark p-8 rounded-lg shadow-lg border border-db-orange/30 flex-1 max-w-sm mx-auto">
-                        <div class="text-5xl text-db-orange mb-4">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h3 class="text-2xl font-heading font-bold text-db-yellow mb-2">3. Konfirmasi Pesanan</h3>
-                        <p class="text-db-cream">Admin kami akan mengonfirmasi pesanan, total, dan alamat pengiriman Anda.</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-        
-        <section id="feedback" class="py-20 bg-db-maroon-dark text-center">
-            <div class="container mx-auto px-6 max-w-4xl">
-                <h2 class="text-4xl font-heading font-bold text-db-yellow mb-6">
-                    Honest Review
-                </h2>
-                <p class="text-lg text-db-cream mb-8 leading-relaxed max-w-3xl mx-auto">
-                    Kepuasan Anda adalah prioritas kami. Kami sangat menghargai masukan dan saran Anda untuk terus meningkatkan kualitas produk dan layanan Dapoerbanjarjkt.
-                </p>
-                
-                <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
-                    <div class="md:w-1/2 max-w-xs mx-auto">
-                        <img src="feedback.png" alt="Scan QR Code untuk Feedback" class="rounded-lg shadow-lg border-4 border-db-orange">
-                    </div>
-                    <div class="md:w-1/2 flex flex-col items-center justify-center">
-                        <p class="text-db-cream text-lg mb-4">Scan QR di samping atau klik tombol di bawah ini:</p>
-                        
-                        <a href="https://www.instagram.com/stories/highlights/17931288949796769/" 
-                           target="_blank" 
-                           data-target="Instagram Story"
-                           class="popup-trigger bg-db-yellow text-db-maroon-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-db-orange hover:text-white transform hover:scale-105 transition duration-300 shadow-lg">
-                            Lihat Honest Review
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="social-links" class="py-16 bg-db-maroon">
-            <div class="container mx-auto px-6 max-w-2xl text-center">
-        
-                <h2 class="text-4xl font-heading font-bold text-db-yellow mb-6">
-                    Link Tree
-                </h2>
-        
-                <p class="text-db-cream mb-8">
-                    Terhubung dengan Dapoerbanjarjkt di berbagai platform.
-                </p>
-        
-                <div class="flex flex-col gap-4">
-        
-                    <a href="https://instagram.com/dapoerbanjarjkt"
-                       target="_blank"
-                       data-target="Instagram"
-                       class="popup-trigger w-full bg-db-maroon-dark border border-db-yellow text-db-yellow 
-                              py-4 px-6 rounded-full text-lg font-bold 
-                              shadow-md hover:bg-db-yellow hover:text-db-maroon-dark transition duration-300">
-                        <i class="fab fa-instagram mr-2"></i> Instagram
-                    </a>
-        
-                    <a href="https://tiktok.com/@dapoerbanjarjkt"
-                       target="_blank"
-                       data-target="TikTok"
-                       class="popup-trigger w-full bg-db-maroon-dark border border-db-yellow text-db-yellow 
-                              py-4 px-6 rounded-full text-lg font-bold 
-                              shadow-md hover:bg-db-yellow hover:text-db-maroon-dark transition duration-300">
-                        <i class="fab fa-tiktok mr-2"></i> TikTok
-                    </a>
-        
-                    <a href="https://tokopedia.com/dapoerbanjarjkt"
-                       target="_blank"
-                       data-target="Tokopedia"
-                       class="popup-trigger w-full bg-db-maroon-dark border border-db-yellow text-db-yellow 
-                              py-4 px-6 rounded-full text-lg font-bold 
-                              shadow-md hover:bg-db-yellow hover:text-db-maroon-dark transition duration-300">
-                        <i class="fa-solid fa-bag-shopping mr-2"></i> Tokopedia
-                    </a>
-        
-                    <a href="https://wa.me/6285211966962"
-                       target="_blank"
-                       data-target="WhatsApp"
-                       class="popup-trigger w-full bg-db-yellow text-db-maroon-dark 
-                              py-4 px-6 rounded-full text-lg font-bold 
-                              shadow-md hover:bg-db-orange hover:text-white transition duration-300">
-                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp Order
-                    </a>
-        
-                    <a href="https://wa.me/6285216010847"
-                       target="_blank"
-                       data-target="WhatsApp"
-                       class="popup-trigger w-full bg-db-yellow text-db-maroon-dark 
-                              py-4 px-6 rounded-full text-lg font-bold 
-                              shadow-md hover:bg-db-orange hover:text-white transition duration-300">
-                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp Order 2
-                    </a>
-        
-                </div>
-            </div>
-        </section>
-
-        <footer id="kontak" class="py-20 bg-db-maroon border-t-4 border-db-orange">
-            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-                
-                <div>
-                    <h3 class="text-2xl font-heading font-bold text-db-yellow mb-4">Dapoerbanjarjkt</h3>
-                    <p class="text-db-cream/80">
-                        Menyajikan kuliner otentik Khas Banjar (Kalimantan Selatan) sejak 2016. Obati rindu masakan kampung halaman Anda.
+                    <p class="text-xs sm:text-sm text-parchment-200/90 leading-relaxed max-w-xl mx-auto md:mx-0">
+                        Dari lembutnya <strong>Bingka Kentang Panggang</strong> beraroma karamel, gurihnya <strong>Cireng Ayam Suwir</strong>, hingga hidangan klasik <strong>Soto Banjar & Ketupat Kandangan</strong> dalam kemasan merah-emas yang elegan.
                     </p>
-                </div>
-                
-                <div>
-                    <h3 class="text-2xl font-heading font-bold text-db-yellow mb-4">Hubungi Kami</h3>
-                    <ul class="space-y-3 text-db-cream/80">
-                        <li>
-                            <a href="https://www.google.com/maps/place/Dapoer+Banjar+Jakarta/@-6.236952,106.8622325,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f3fcc7b0cab9:0xea6a38a4955eece2!8m2!3d-6.236952!4d106.8622325!16s%2Fg%2F11ql4c_7g2?entry=ttu&g_ep=EgoyMDI1MTAyOC4wIKXMDSoASAFQAw%3D%3D" 
-                               target="_blank" 
-                               data-target="Google Maps"
-                               class="popup-trigger hover:text-db-yellow flex items-center gap-2 justify-center md:justify-start">
-                                <i class="fas fa-map-marker-alt text-db-orange w-6"></i>
-                                Dapoer Banjar Jakarta, Tebet
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://wa.me/6285211966962" target="_blank" data-target="WhatsApp" class="popup-trigger hover:text-db-yellow flex items-center gap-2 justify-center md:justify-start">
-                                <i class="fab fa-whatsapp text-db-orange w-6"></i> 0852-1196-6962
-                            </a>
-                        </li>
-                    </ul>
-                </div>
 
-                <div>
-                    <h3 class="text-2xl font-heading font-bold text-db-yellow mb-4">Ikuti Kami</h3>
-                    <div class="flex justify-center md:justify-start space-x-6">
-                        <a href="https://www.instagram.com/dapoerbanjar_jkt?igsh=MXZrMnlpcHoyYmxwOA==" target="_blank" data-target="Instagram" class="popup-trigger text-db-cream text-3xl hover:text-db-yellow transition duration-300">
-                            <i class="fab fa-instagram"></i>
+                    <div class="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-2.5">
+                        <a href="#katalog" class="bg-gradient-to-r from-gold-500 to-gold-400 text-maroon-950 font-extrabold px-5 py-2.5 rounded-full text-xs sm:text-sm shadow-md hover:brightness-105 active:scale-95 transition-all flex items-center gap-1.5">
+                            <span>Jelajahi Menu</span>
+                            <span>→</span>
                         </a>
-                        <a href="https://www.tiktok.com/@dapoerbanjar_jkt" target="_blank" data-target="TikTok" class="popup-trigger text-db-cream text-3xl hover:text-db-yellow transition duration-300">
-                            <i class="fab fa-tiktok"></i>
+                        <a href="#hampers-builder" class="bg-maroon-950/60 hover:bg-maroon-950 text-gold-300 border border-gold-500/60 font-bold px-4 py-2.5 rounded-full text-xs sm:text-sm transition-all flex items-center gap-1.5">
+                            <span>🏮 Rakit Hampers Imlek / Acara</span>
                         </a>
+                    </div>
+
+                    <!-- Oriental Trust Badges -->
+                    <div class="pt-3 grid grid-cols-3 gap-2 max-w-md mx-auto md:mx-0 border-t border-gold-500/20 text-left">
+                        <div class="flex items-center gap-2">
+                            <span class="text-gold-400 text-base">🔥</span>
+                            <div>
+                                <div class="text-[11px] font-bold text-gold-300">Fresh Panggang</div>
+                                <div class="text-[10px] text-parchment-200/70">Dibuat sesuai pesanan</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-gold-400 text-base">🎁</span>
+                            <div>
+                                <div class="text-[11px] font-bold text-gold-300">Box Maroon Gold</div>
+                                <div class="text-[10px] text-parchment-200/70">Siap jadi hantaran</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-gold-400 text-base">🛵</span>
+                            <div>
+                                <div class="text-[11px] font-bold text-gold-300">Kirim Se-Jabodetabek</div>
+                                <div class="text-[10px] text-parchment-200/70">Instan & Sameday</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Right Hero Featured Oriental Frame (Uses GGG.png & Bingka Ori.png) -->
+                <div class="md:col-span-5">
+                    <div class="relative mx-auto max-w-sm bg-maroon-950/80 border-2 border-gold-500 rounded-2xl p-3 shadow-2xl">
+                        <!-- Corner Gold Dots -->
+                        <span class="w-2 h-2 rounded-full bg-gold-400 absolute top-2 left-2"></span>
+                        <span class="w-2 h-2 rounded-full bg-gold-400 absolute top-2 right-2"></span>
+                        <span class="w-2 h-2 rounded-full bg-gold-400 absolute bottom-2 left-2"></span>
+                        <span class="w-2 h-2 rounded-full bg-gold-400 absolute bottom-2 right-2"></span>
+
+                        <!-- Main Banner / Showcase Image -->
+                        <div class="relative rounded-xl overflow-hidden bg-maroon-900 border border-gold-500/40 aspect-[16/10] flex items-center justify-center">
+                            <img src="GGG.png" alt="Dapoer Banjar Oriental Collection" 
+                                 onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                                 class="w-full h-full object-cover">
+                            <!-- Fallback Oriental Emblem SVG -->
+                            <div class="hidden text-center p-4">
+                                <div class="w-14 h-14 rounded-full border-2 border-gold-400 mx-auto flex items-center justify-center font-display text-gold-300 text-xl">福</div>
+                                <p class="font-serif text-gold-300 text-sm mt-2">Koleksi Signature Dapoer Banjar</p>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-maroon-950/90 via-transparent to-transparent flex items-end p-3">
+                                <div class="flex items-center justify-between w-full">
+                                    <div>
+                                        <span class="text-[10px] uppercase tracking-widest text-gold-400 font-bold block">Signature Dish</span>
+                                        <h2 class="font-serif text-base font-bold text-white">Bingka Kentang & Kudapan Banjar</h2>
+                                    </div>
+                                    <span class="bg-red-700 text-gold-300 border border-gold-400 text-[10px] font-bold px-2 py-0.5 rounded">極品</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3 Mini Highlight Cards Inside Hero Frame -->
+                        <div class="grid grid-cols-3 gap-2 mt-2.5">
+                            <div onclick="openProductModal('bingka-ori')" class="bg-maroon-900/90 hover:bg-maroon-800 border border-gold-500/40 rounded-xl p-2 text-center cursor-pointer transition-all">
+                                <div class="h-12 flex items-center justify-center">
+                                    <img src="Bingka Ori.png" alt="Bingka Ori" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" class="max-h-11 object-contain">
+                                    <span class="hidden text-xl">🥮</span>
+                                </div>
+                                <p class="text-[10px] font-bold text-gold-300 truncate mt-1">Bingka Ori</p>
+                                <p class="text-[9px] text-parchment-200">Rp 65.000</p>
+                            </div>
+                            <div onclick="openProductModal('bingka-keju')" class="bg-maroon-900/90 hover:bg-maroon-800 border border-gold-500/40 rounded-xl p-2 text-center cursor-pointer transition-all">
+                                <div class="h-12 flex items-center justify-center">
+                                    <img src="Bingka Keju.png" alt="Bingka Keju" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" class="max-h-11 object-contain">
+                                    <span class="hidden text-xl">🧀</span>
+                                </div>
+                                <p class="text-[10px] font-bold text-gold-300 truncate mt-1">Bingka Keju</p>
+                                <p class="text-[9px] text-parchment-200">Rp 75.000</p>
+                            </div>
+                            <div onclick="openProductModal('cireng-ayam')" class="bg-maroon-900/90 hover:bg-maroon-800 border border-gold-500/40 rounded-xl p-2 text-center cursor-pointer transition-all">
+                                <div class="h-12 flex items-center justify-center">
+                                    <img src="Cireng ayam.jpg" alt="Cireng Ayam" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" class="max-h-11 object-cover rounded-lg">
+                                    <span class="hidden text-xl">🥟</span>
+                                </div>
+                                <p class="text-[10px] font-bold text-gold-300 truncate mt-1">Cireng Ayam</p>
+                                <p class="text-[9px] text-parchment-200">Rp 35.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="text-center text-db-cream/60 pt-12 mt-12 border-t border-db-orange/20">
-                © 2025 Dapoerbanjarjkt. Dibuat dengan cinta di Jakarta.
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-6xl mx-auto px-3.5 pt-6 space-y-10">
+
+        <!-- 4. ORIENTAL CATEGORY PILLS & MENU CATALOG -->
+        <section id="katalog" class="scroll-mt-16 space-y-4">
+            <!-- Section Header with Oriental Divider -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-gold-500/40 pb-3">
+                <div>
+                    <div class="flex items-center gap-1.5 text-maroon-700 text-xs font-extrabold uppercase tracking-widest">
+                        <span>❖</span>
+                        <span>Daftar Sajian Istimewa</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-maroon-950">Katalog Menu Dapoer Banjar</h2>
+                </div>
+                <div class="flex items-center justify-between sm:justify-end gap-2">
+                    <span id="menu-count-label" class="text-xs font-bold bg-maroon-100 text-maroon-800 border border-maroon-700/20 px-2.5 py-1 rounded-full">12 Sajian</span>
+                    <select id="sort-menu" onchange="handleSort(this.value)" class="text-xs font-bold bg-white border border-gold-500/60 text-maroon-950 rounded-full px-3 py-1.5 focus:outline-none">
+                        <option value="featured">⭐ Rekomendasi Utama</option>
+                        <option value="price-asc">💸 Harga Terendah</option>
+                        <option value="price-desc">👑 Harga Tertinggi</option>
+                    </select>
+                </div>
             </div>
-        </footer>
+
+            <!-- Horizontal Scrollable Category Filter Pills -->
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="category-buttons">
+                <button onclick="filterCategory('all')" data-cat="all" class="cat-btn bg-maroon-800 text-gold-300 border border-gold-500 px-4 py-2 rounded-full text-xs font-bold shrink-0 shadow-sm transition-all">
+                    ❖ Semua Menu (12)
+                </button>
+                <button onclick="filterCategory('Bingka & Wadai')" data-cat="Bingka & Wadai" class="cat-btn bg-white text-maroon-900 border border-gold-500/50 hover:border-maroon-800 px-4 py-2 rounded-full text-xs font-bold shrink-0 transition-all">
+                    🥮 Kue Bingka & Wadai Manis
+                </button>
+                <button onclick="filterCategory('Kudapan Gurih')" data-cat="Kudapan Gurih" class="cat-btn bg-white text-maroon-900 border border-gold-500/50 hover:border-maroon-800 px-4 py-2 rounded-full text-xs font-bold shrink-0 transition-all">
+                    🥟 Cireng & Wadai Gurih
+                </button>
+                <button onclick="filterCategory('Hidangan Utama')" data-cat="Hidangan Utama" class="cat-btn bg-white text-maroon-900 border border-gold-500/50 hover:border-maroon-800 px-4 py-2 rounded-full text-xs font-bold shrink-0 transition-all">
+                    🍲 Soto & Hidangan Banjar
+                </button>
+            </div>
+
+            <!-- Product Grid (2 Cols on Mobile, 3 on Tablet, 4 on Desktop) -->
+            <div id="menu-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </section>
+
+        <!-- 5. INTERACTIVE CUSTOM ORIENTAL HAMPERS BUILDER -->
+        <section id="hampers-builder" class="scroll-mt-16 bg-maroon-silk text-parchment-50 rounded-3xl border-2 border-gold-500 p-4 sm:p-7 shadow-xl relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <!-- Left Description & Steps -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="inline-flex items-center gap-1.5 bg-gold-500 text-maroon-950 px-3 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider">
+                        <span>🏮 Layanan Hantaran & Gift Set</span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-gold-300 leading-snug">
+                        Rakit Paket Hampers Oriental Maroon & Emas
+                    </h2>
+                    <p class="text-xs sm:text-sm text-parchment-200/90 leading-relaxed">
+                        Kirimkan kehangatan untuk kerabat, kolega bisnis, acara Imlek, Lebaran, atau syukuran. Setiap paket dikemas dalam <strong>Box Hardcover Merah Maroon beraksen pita Emas</strong> dan kartu ucapan kaligrafi.
+                    </p>
+
+                    <!-- Step 1: Pilih Tipe Paket Box -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-gold-300 block">1. Pilih Ukuran Box Hantaran:</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5" id="hampers-tier-options">
+                            <button type="button" onclick="selectHampersTier('harmony', 'Paket Harmony (1 Loyang + 1 Snack)', 115000)" id="tier-harmony"
+                                    class="hampers-tier-btn bg-maroon-950/90 border-2 border-gold-400 rounded-2xl p-3 text-left transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-extrabold text-gold-300">雙喜 Harmony</span>
+                                    <span class="text-[10px] bg-gold-500 text-maroon-950 font-bold px-1.5 py-0.5 rounded">Populer</span>
+                                </div>
+                                <p class="text-[11px] text-parchment-200 mt-1">1 Loyang Bingka + 1 Pack Cireng/Mini</p>
+                                <p class="text-xs font-extrabold text-white mt-1.5">Rp 115.000</p>
+                            </button>
+
+                            <button type="button" onclick="selectHampersTier('imperial', 'Paket Imperial Twin (2 Loyang Penuh)', 145000)" id="tier-imperial"
+                                    class="hampers-tier-btn bg-maroon-900/60 border border-gold-500/40 rounded-2xl p-3 text-left transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-extrabold text-gold-300">富貴 Imperial</span>
+                                    <span class="text-[10px] text-gold-400">Hemat</span>
+                                </div>
+                                <p class="text-[11px] text-parchment-200 mt-1">2 Loyang Bingka bebas pilih varian</p>
+                                <p class="text-xs font-extrabold text-white mt-1.5">Rp 145.000</p>
+                            </button>
+
+                            <button type="button" onclick="selectHampersTier('emperor', 'Paket Royal Feast (Lengkap + Sirup)', 195000)" id="tier-emperor"
+                                    class="hampers-tier-btn bg-maroon-900/60 border border-gold-500/40 rounded-2xl p-3 text-left transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-extrabold text-gold-300">皇室 Royal</span>
+                                    <span class="text-[10px] text-gold-400">VIP</span>
+                                </div>
+                                <p class="text-[11px] text-parchment-200 mt-1">2 Bingka + Bingka Mini + Sirup Habang</p>
+                                <p class="text-xs font-extrabold text-white mt-1.5">Rp 195.000</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Pilih Kombinasi Isi & Kartu Ucapan -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                        <div>
+                            <label class="text-xs font-bold text-gold-300 block mb-1">2. Pilih Varian Utama:</label>
+                            <select id="hampers-flavor" class="w-full px-3 py-2 rounded-xl bg-maroon-950 border border-gold-500/60 text-xs font-semibold text-parchment-50 focus:outline-none">
+                                <option value="Bingka Ori + Bingka Keju">Bingka Ori + Bingka Keju Spesial</option>
+                                <option value="Double Bingka Keju Lumer">Double Bingka Keju Lumer</option>
+                                <option value="Bingka Ori + Cireng Ayam Suwir">Bingka Ori + Cireng Ayam Suwir</option>
+                                <option value="Bingka Mini Hantaran + Wadai Ipau">Bingka Mini Hantaran + Wadai Ipau</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold text-gold-300 block mb-1">3. Pesan Kartu Ucapan (Gratis):</label>
+                            <input type="text" id="hampers-card-note" placeholder="Cth: Gong Xi Fa Cai / Selamat Hari Raya..." 
+                                   class="w-full px-3 py-2 rounded-xl bg-maroon-950 border border-gold-500/60 text-xs text-parchment-50 placeholder-parchment-200/40 focus:outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Live Preview Box -->
+                <div class="lg:col-span-5">
+                    <div class="bg-parchment-50 text-maroon-950 rounded-2xl p-4 sm:p-5 border-2 border-gold-500 shadow-lg space-y-3">
+                        <div class="flex items-center justify-between border-b border-maroon-900/10 pb-2.5">
+                            <div class="flex items-center gap-2">
+                                <span class="w-7 h-7 rounded-lg bg-maroon-800 text-gold-300 font-display text-xs font-bold flex items-center justify-center">禮</span>
+                                <div>
+                                    <h3 class="text-xs font-extrabold uppercase tracking-wider text-maroon-800">Preview Hantaran</h3>
+                                    <p id="preview-tier-name" class="text-sm font-serif font-bold">Paket Harmony (1 Loyang + 1 Snack)</p>
+                                </div>
+                            </div>
+                            <span id="preview-tier-price" class="text-sm font-extrabold text-maroon-800 bg-gold-300/60 px-2.5 py-1 rounded-lg border border-gold-500">Rp 115.000</span>
+                        </div>
+
+                        <div class="flex items-center gap-3 bg-parchment-100 p-2.5 rounded-xl border border-gold-500/40">
+                            <img src="Bingka mini.jpg" alt="Hampers Preview" onerror="this.src='Bingka Keju.png'" class="w-16 h-16 rounded-lg object-cover border border-gold-500">
+                            <div class="text-xs space-y-0.5">
+                                <div class="font-bold text-maroon-900">Termasuk Kemasan Eksklusif:</div>
+                                <p class="text-[11px] text-maroon-800/80">✓ Box Maroon Hardcover & Pita Gold</p>
+                                <p class="text-[11px] text-maroon-800/80">✓ Kartu Ucapan Segel Oriental</p>
+                                <p class="text-[11px] text-maroon-800/80">✓ Tas Kain Spunbond Maroon</p>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="addCustomHampersToCart()" class="w-full bg-maroon-800 hover:bg-maroon-700 active:scale-98 text-gold-300 border border-gold-400 py-2.5 rounded-xl text-xs font-extrabold flex items-center justify-center gap-2 shadow-md transition-all">
+                            <span>+ Masukkan Paket Hampers ke Pesanan</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CUSTOMER FEEDBACK & ORIENTAL HERITAGE STORY (Uses feedback.png & feedback.jpg) -->
+        <section id="testimoni" class="scroll-mt-16 space-y-4">
+            <div class="text-center max-w-xl mx-auto space-y-1">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-maroon-700">❖ Suara Pelanggan Setia ❖</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-maroon-950">Kesan Mereka Tentang Dapoer Banjar</h2>
+                <p class="text-xs text-maroon-800/80">Dipercaya ratusan keluarga di Jakarta untuk sajian arisan, hantaran hari raya, dan pengobat rindu kampung halaman.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+                <!-- Testimonial Image 1 (feedback.png) -->
+                <div class="oriental-card bg-white rounded-2xl p-3 flex flex-col justify-between">
+                    <div class="rounded-xl overflow-hidden bg-parchment-100 border border-gold-500/30 h-48 flex items-center justify-center">
+                        <img src="feedback.png" alt="Testimoni Pelanggan Dapoer Banjar 1" 
+                             onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                             class="w-full h-full object-cover">
+                        <div class="hidden p-4 text-center text-xs text-maroon-900 italic">
+                            "Bingka kentangnya lembut banget, manisnya pas dan kejunya melimpah!"
+                        </div>
+                    </div>
+                    <div class="pt-3 flex items-center justify-between text-xs">
+                        <div>
+                            <span class="font-extrabold text-maroon-950 block">Ibu Liana Wijaya</span>
+                            <span class="text-[10px] text-maroon-700">Kelapa Gading, Jakarta Utara</span>
+                        </div>
+                        <span class="text-amber-500 font-bold">★★★★★</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial Image 2 (feedback.jpg) -->
+                <div class="oriental-card bg-white rounded-2xl p-3 flex flex-col justify-between">
+                    <div class="rounded-xl overflow-hidden bg-parchment-100 border border-gold-500/30 h-48 flex items-center justify-center">
+                        <img src="feedback.jpg" alt="Testimoni Pelanggan Dapoer Banjar 2" 
+                             onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                             class="w-full h-full object-cover">
+                        <div class="hidden p-4 text-center text-xs text-maroon-900 italic">
+                            "Pesan hampers Bingka Mini & Cireng Ayam buat hantaran keluarga, kemasannya mewah!"
+                        </div>
+                    </div>
+                    <div class="pt-3 flex items-center justify-between text-xs">
+                        <div>
+                            <span class="font-extrabold text-maroon-950 block">Hendra Kusuma</span>
+                            <span class="text-[10px] text-maroon-700">PIK, Jakarta Utara</span>
+                        </div>
+                        <span class="text-amber-500 font-bold">★★★★★</span>
+                    </div>
+                </div>
+
+                <!-- Oriental Heritage Guarantee Card -->
+                <div class="oriental-card bg-parchment-100 rounded-2xl p-5 flex flex-col justify-between border-2 border-gold-500/60">
+                    <div class="space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-maroon-800 text-gold-300 text-[10px] font-extrabold px-2.5 py-1 rounded-full">품질 Jaminan Mutu</span>
+                            <span class="font-display text-xl text-maroon-800 font-bold">福</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-maroon-950">Komitmen Dapoer Banjar Jakarta</h3>
+                        <p class="text-xs text-maroon-900/80 leading-relaxed">
+                            Setiap loyang <strong>Wadai Bingka</strong> dan sajian khas Banjar kami olah menggunakan santan peras segar, telur pilihan, dan rempah asli Kalimantan Selatan.
+                        </p>
+                        <ul class="text-xs space-y-1.5 text-maroon-900 font-semibold pt-1">
+                            <li class="flex items-center gap-1.5"><span class="text-maroon-700">❖</span> Tanpa Bahan Pengawet & Pemanis Buatan</li>
+                            <li class="flex items-center gap-1.5"><span class="text-maroon-700">❖</span> Menerima Pesanan Arisan, Kantor & Hantaran</li>
+                            <li class="flex items-center gap-1.5"><span class="text-maroon-700">❖</span> Pengiriman Aman dengan Kemasan Segel</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 mt-3 border-t border-gold-500/40 flex items-center justify-between text-[11px] font-bold text-maroon-800">
+                        <span>📍 Dapur Pengiriman: Jakarta</span>
+                        <a href="#katalog" class="underline hover:text-maroon-600">Pesan Sekarang →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <div id="exit-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
-        <div id="exit-modal-overlay" class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity"></div>
-        
-        <div class="relative bg-db-cream text-db-maroon-dark rounded-xl shadow-2xl w-full max-w-sm overflow-hidden transform transition-all scale-100 border-2 border-db-yellow">
-            <div class="bg-db-maroon p-4 text-center">
-                <div class="w-16 h-16 bg-db-cream rounded-full flex items-center justify-center mx-auto mb-2 text-db-orange text-3xl shadow-lg">
-                    <i class="fas fa-external-link-alt"></i>
+    <!-- 7. ORIENTAL FOOTER -->
+    <footer class="mt-14 bg-maroon-950 text-parchment-200 border-t-2 border-gold-500">
+        <div class="max-w-6xl mx-auto px-3.5 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-maroon-800 border border-gold-500 flex items-center justify-center font-display text-gold-300 font-bold">
+                    福
                 </div>
-                <h3 class="text-xl font-heading font-bold text-db-yellow">Konfirmasi</h3>
+                <div>
+                    <h4 class="font-display text-sm font-bold text-gold-300">DAPOER BANJAR JAKARTA</h4>
+                    <p class="text-[11px] text-parchment-200/70">Warisan Kuliner Banjarmasin dengan Sentuhan Oriental Modern</p>
+                </div>
             </div>
-            
-            <div class="p-6 text-center">
-                <p class="text-lg font-medium mb-2">
-                    Kamu akan keluar dari web dan di arahkan ke <span id="modal-destination" class="font-bold text-db-maroon">Halaman Eksternal</span>
-                </p>
-                <p class="text-sm text-gray-600">Apakah kamu ingin melanjutkan?</p>
+            <p class="text-xs text-parchment-200/70">© 2026 Dapoerbanjarjkt • Seluruh Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- 8. FLOATING ORDER SUMMARY BAR (Appears when Cart > 0) -->
+    <div id="floating-cart" class="fixed bottom-16 sm:bottom-5 left-0 right-0 z-30 px-3.5 pointer-events-none hidden">
+        <div class="max-w-md mx-auto bg-maroon-950 text-parchment-50 border-2 border-gold-400 rounded-2xl p-3 shadow-2xl flex items-center justify-between pointer-events-auto">
+            <div class="flex items-center gap-2.5">
+                <div id="floating-count" class="w-8 h-8 rounded-xl bg-gold-500 text-maroon-950 font-extrabold text-xs flex items-center justify-center">1</div>
+                <div>
+                    <span class="text-[10px] text-gold-300 block uppercase tracking-wider font-semibold">Total Pesanan</span>
+                    <span id="floating-total" class="text-sm font-extrabold text-white">Rp 0</span>
+                </div>
             </div>
-            
-            <div class="flex border-t border-db-maroon/10">
-                <button id="btn-batal" class="flex-1 py-4 font-bold text-db-maroon hover:bg-gray-100 transition duration-200 border-r border-db-maroon/10">
-                    Tidak
+            <button onclick="openCartSheet()" class="bg-gradient-to-r from-gold-500 to-gold-400 text-maroon-950 px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 active:scale-95 transition-all">
+                <span>Lanjut Pesan</span>
+                <span>→</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 9. MOBILE BOTTOM NAVIGATION BAR -->
+    <nav class="fixed bottom-0 left-0 right-0 z-30 bg-maroon-950/95 backdrop-blur-md border-t border-gold-500/40 text-parchment-200 sm:hidden">
+        <div class="grid grid-cols-4 h-14 max-w-md mx-auto text-[10px] font-bold">
+            <a href="#beranda" onclick="resetFilters()" class="flex flex-col items-center justify-center gap-0.5 text-gold-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                <span>Beranda</span>
+            </a>
+            <a href="#katalog" class="flex flex-col items-center justify-center gap-0.5 hover:text-gold-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                <span>Menu</span>
+            </a>
+            <a href="#hampers-builder" class="flex flex-col items-center justify-center gap-0.5 hover:text-gold-300">
+                <span class="text-sm leading-none">🏮</span>
+                <span>Hampers</span>
+            </a>
+            <button onclick="openCartSheet()" class="flex flex-col items-center justify-center gap-0.5 hover:text-gold-300 relative">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+                <span>Keranjang</span>
+                <span id="mobile-nav-badge" class="absolute top-1 right-5 bg-gold-500 text-maroon-950 text-[9px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 10. PRODUCT DETAIL MODAL / BOTTOM SHEET -->
+    <div id="product-backdrop" onclick="closeProductModal()" class="fixed inset-0 bg-black/60 z-40 hidden"></div>
+    <div id="product-sheet" class="fixed bottom-0 left-0 right-0 z-50 max-w-lg mx-auto bg-parchment-50 border-t-2 sm:border-2 border-gold-500 rounded-t-3xl sm:rounded-3xl sm:bottom-6 p-5 transition-transform duration-200 sheet-closed hidden">
+        <div class="w-10 h-1.5 bg-maroon-900/20 rounded-full mx-auto mb-3 sm:hidden"></div>
+        <div id="product-modal-body"></div>
+    </div>
+
+    <!-- 11. CART & WHATSAPP ORDER CHECKOUT SHEET -->
+    <div id="cart-backdrop" onclick="closeCartSheet()" class="fixed inset-0 bg-black/60 z-40 hidden"></div>
+    <div id="cart-sheet" class="fixed bottom-0 left-0 right-0 z-50 max-w-lg mx-auto bg-parchment-50 border-t-2 sm:border-2 border-gold-500 rounded-t-3xl sm:rounded-3xl sm:bottom-6 p-5 max-h-[86vh] flex flex-col transition-transform duration-200 sheet-closed hidden">
+        <div class="w-10 h-1.5 bg-maroon-900/20 rounded-full mx-auto mb-2 sm:hidden"></div>
+        <div class="flex items-center justify-between pb-3 border-b border-gold-500/40">
+            <div class="flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-maroon-800 text-gold-300 font-display text-xs font-bold flex items-center justify-center">福</span>
+                <div>
+                    <h3 class="font-serif text-lg font-bold text-maroon-950 leading-none">Daftar Pesanan Anda</h3>
+                    <p class="text-[11px] text-maroon-700 font-medium mt-0.5">Dapoer Banjar Jakarta</p>
+                </div>
+            </div>
+            <button onclick="closeCartSheet()" class="w-8 h-8 rounded-full bg-maroon-100 text-maroon-900 font-bold text-xs flex items-center justify-center">✕</button>
+        </div>
+
+        <!-- Scrollable Cart Items -->
+        <div id="cart-items-container" class="flex-1 overflow-y-auto py-3 space-y-2.5"></div>
+
+        <!-- Customer Form & Checkout -->
+        <div class="pt-3 border-t border-gold-500/40 space-y-2.5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <input type="text" id="cust-name" placeholder="Nama Pemesan / Penerima" class="w-full px-3 py-2 rounded-xl bg-white border border-gold-500/60 text-xs font-semibold focus:outline-none">
+                <input type="text" id="cust-address" placeholder="Area Pengiriman (Cth: Tebet / PIK)" class="w-full px-3 py-2 rounded-xl bg-white border border-gold-500/60 text-xs font-semibold focus:outline-none">
+            </div>
+            <input type="text" id="cust-note" placeholder="Catatan tambahan (Jam kirim / ucapan hampers)" class="w-full px-3 py-2 rounded-xl bg-white border border-gold-500/60 text-xs font-semibold focus:outline-none">
+
+            <div class="flex items-center justify-between px-1 pt-1">
+                <span class="text-xs font-bold text-maroon-800">Total Estimasi Pesanan</span>
+                <span id="cart-total-display" class="text-base font-extrabold text-maroon-900">Rp 0</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+                <button onclick="copyOrderFormat()" class="bg-parchment-200 hover:bg-gold-300 text-maroon-950 border border-gold-500 py-2.5 rounded-xl text-xs font-extrabold flex items-center justify-center gap-1.5 transition-all">
+                    <span>📋 Salin Format</span>
                 </button>
-                <button id="btn-lanjut" class="flex-1 py-4 font-bold text-white bg-green-600 hover:bg-green-700 transition duration-200">
-                    Lanjut
+                <button onclick="sendWhatsApp()" class="bg-maroon-800 hover:bg-maroon-700 text-gold-300 border border-gold-400 py-2.5 rounded-xl text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md transition-all">
+                    <span>💬 Pesan via WhatsApp</span>
                 </button>
             </div>
         </div>
     </div>
 
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast-container" class="fixed top-14 left-1/2 -translate-x-1/2 z-50 pointer-events-none space-y-1.5"></div>
+
+    <!-- JAVASCRIPT: COMPLETE REPOSITORY ASSETS & INTERACTIVITY -->
     <script>
-        // 1. Script Mobile Menu
-        const menuBtn = document.getElementById('menu-btn');
-        const menuLinks = document.getElementById('menu-links');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        menuBtn.addEventListener('click', () => {
-            menuLinks.classList.toggle('hidden');
-            if (menuLinks.classList.contains('hidden')) {
-                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            } else {
-                menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+        // Complete Menu Database using exact filenames from Dapoerbanjarjkt repository
+        const MENU_ITEMS = [
+            {
+                id: 'bingka-ori',
+                name: 'Bingka Kentang Original',
+                category: 'Bingka & Wadai',
+                price: 65000,
+                unit: 'Loyang Penuh (Diameter 16cm)',
+                badge: 'Signature 👑',
+                image: 'Bingka Ori.png',
+                desc: 'Kue Bingka kentang khas Banjarmasin dengan tekstur super lembut, legit, dan wangi santan karamel yang dipanggang perlahan.',
+                tags: ['Panggang Oven/Arang', 'Manis Legit', 'Tahan 3 Hari di Kulkas']
+            },
+            {
+                id: 'bingka-keju',
+                name: 'Bingka Kentang Keju Spesial',
+                category: 'Bingka & Wadai',
+                price: 75000,
+                unit: 'Loyang Penuh Full Topping',
+                badge: 'Best Seller ⭐',
+                image: 'Bingka Keju.png',
+                desc: 'Perpaduan adonan bingka kentang yang lembut dan lumer di mulut dengan taburan keju cheddar parut melimpah di atasnya.',
+                tags: ['Full Keju Parut', 'Gurih & Legit', 'Favorit Keluarga']
+            },
+            {
+                id: 'bingka-mini',
+                name: 'Bingka Mini Hantaran Oriental',
+                category: 'Bingka & Wadai',
+                price: 55000,
+                unit: 'Box Isi 6 Pcs Bite-Size',
+                badge: 'Cocok Hampers 🏮',
+                image: 'Bingka mini.jpg',
+                desc: 'Bingka kentang ukuran mungil sekali santap dalam kemasan kotak hantaran cantik. Praktis disajikan untuk tamu dan acara.',
+                tags: ['Isi 6 Pcs Mini', 'Kemasan Rapi', 'Mix Rasa Ori & Keju']
+            },
+            {
+                id: 'cireng-ayam',
+                name: 'Cireng Isi Ayam Suwir Pedas Gurih',
+                category: 'Kudapan Gurih',
+                price: 35000,
+                unit: 'Pack Isi 8 Pcs Besar',
+                badge: 'Viral & Gurih 🌶️',
+                image: 'Cireng ayam.jpg',
+                desc: 'Cireng kulit renyah kenyal dengan isian ayam suwir bumbu rempah pedas gurih yang padat. Tersedia siap goreng (frozen) atau matang.',
+                tags: ['Isian Ayam Melimpah', 'Bisa Frozen / Matang', 'Termasuk Sambal']
+            },
+            {
+                id: 'wadai-ipau',
+                name: 'Wadai Ipau (Lasagna Banjar)',
+                category: 'Kudapan Gurih',
+                price: 60000,
+                unit: 'Loyang Sedang + Kuah Santan',
+                badge: 'Kuliner Langka ✨',
+                image: 'wadai ipau.jpg',
+                desc: 'Kudapan bangsawan Banjar berlapis kulit tipis dengan isian tumisan daging, wortel, kentang, telur, dan siraman saus santan gurih.',
+                tags: ['Gurih Creamy', 'Lapisan Daging & Sayur', 'Khas Ramadan & Acara']
+            },
+            {
+                id: 'soto-banjar',
+                name: 'Soto Banjar Ayam Kampung Komplit',
+                category: 'Hidangan Utama',
+                price: 38000,
+                unit: 'Porsi Komplit + Ketupat & Perkedel',
+                badge: 'Kuah Rempah 🍲',
+                image: 'Soto Banjar.jpg',
+                desc: 'Soto Banjar autentik dengan kuah kaldu ayam kampung beraroma kayu manis, kapulaga, cengkeh, suwiran ayam, soun, telur bebek, dan perkedel.',
+                tags: ['Rempah Asli Banjar', 'Termasuk Ketupat', 'Perkedel Singkong/Kentang']
+            },
+            {
+                id: 'ketupat-kandangan',
+                name: 'Ketupat Kandangan Ikan Haruan (Gabus)',
+                category: 'Hidangan Utama',
+                price: 45000,
+                unit: 'Porsi Komplit + Ikan Haruan Panggang',
+                badge: 'Warisan Banjar 🐟',
+                image: 'Ketupat kandanngan.jpg',
+                desc: 'Ketupat khas Kandangan dengan tekstur agak pera disiram kuah santan kental berbumbu kemiri dan disajikan bersama ikan haruan (gabus) asap.',
+                tags: ['Ikan Gabus Asap', 'Kuah Santan Gurih', 'Sambal Acan']
+            },
+            {
+                id: 'nasi-kuning',
+                name: 'Nasi Kuning Masak Habang Banjar',
+                category: 'Hidangan Utama',
+                price: 35000,
+                unit: 'Porsi Komplit (Ayam/Telur/Haruan)',
+                badge: 'Bumbu Habang 🍛',
+                image: 'Nasi kuning.jpg',
+                desc: 'Nasi kuning pulen khas Kalimantan Selatan disajikan dengan lauk masak habang (bumbu merah cabai kering manis gurih) dan serundeng.',
+                tags: ['Bumbu Masak Habang', 'Beras Pulen Harum', 'Cocok Sarapan/Acara']
+            },
+            {
+                id: 'bihun-banjar',
+                name: 'Bihun Goreng Bumbu Banjar',
+                category: 'Hidangan Utama',
+                price: 28000,
+                unit: 'Porsi Mengenyangkan',
+                badge: 'Comfort Food 🍜',
+                image: 'bihun banjar.jpg',
+                desc: 'Bihun goreng spesial dengan bumbu bawang, suwiran ayam, telur, sawi, dan taburan bawang goreng renyah serta sambal khas.',
+                tags: ['Harum Bawang Putih', 'Porsi Royal', 'Gurih Nikmat']
+            },
+            {
+                id: 'roti-pisang',
+                name: 'Wadai Roti Pisang Banjar',
+                category: 'Bingka & Wadai',
+                price: 32000,
+                unit: 'Pack Isi 6 Potong Tebal',
+                badge: 'Teman Teh 🍌',
+                image: 'Roti Pisang.jpg',
+                desc: 'Kue tradisional Banjar berbahan potongan pisang manis pilihan dalam adonan tepung santan pandan yang dipanggang harum.',
+                tags: ['Pisang Asli Manis', 'Aroma Pandan Santan', 'Lembut & Padat']
+            },
+            {
+                id: 'pundut-nasi',
+                name: 'Pundut Nasi Kuah Habang',
+                category: 'Kudapan Gurih',
+                price: 25000,
+                unit: 'Pack Isi 2 Bungkus Daun Pisang',
+                badge: 'Tradisional 🍃',
+                image: 'pundut nasi.jpg',
+                desc: 'Olahan beras santan yang dikukus lembut di dalam bungkusan daun pisang, disajikan dengan siraman sambal kuah habang yang gurih.',
+                tags: ['Bungkus Daun Pisang', 'Lembut & Gurih', 'Sambal Habang']
+            },
+            {
+                id: 'sirup-habang',
+                name: 'Sirup Habang Kayu Manis & Bunga Lawang',
+                category: 'Bingka & Wadai',
+                price: 30000,
+                unit: 'Botol 500ml (Siap Seduh)',
+                badge: 'Segar & Harum 🍷',
+                image: 'sirup habang.jpg',
+                desc: 'Sirup merah legendaris khas Banjarmasin dengan aroma rempah kayu manis dan cengkeh yang khas. Nikmat disajikan dingin atau campuran es.',
+                tags: ['Aroma Kayu Manis', 'Manis Menyegarkan', 'Botol Segel 500ml']
             }
-        });
+        ];
 
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuLinks.classList.add('hidden');
-                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-
-        // 2. Script Popup Universal
-        const exitModal = document.getElementById('exit-modal');
-        const exitOverlay = document.getElementById('exit-modal-overlay');
-        const btnBatal = document.getElementById('btn-batal');
-        const btnLanjut = document.getElementById('btn-lanjut');
-        const modalDestination = document.getElementById('modal-destination');
-        
-        // Ambil semua tombol dengan class "popup-trigger"
-        const triggerButtons = document.querySelectorAll('.popup-trigger');
-        
-        let targetUrl = ''; 
-
-        // Fungsi Buka Modal
-        triggerButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault(); 
-                targetUrl = this.href; 
-                
-                // Ambil nama tujuan dari atribut data-target
-                const destinationName = this.getAttribute('data-target') || 'Halaman Lain';
-                
-                // Update teks di dalam modal
-                modalDestination.textContent = destinationName;
-
-                // Tampilkan modal
-                exitModal.classList.remove('hidden'); 
-            });
-        });
-
-        // Fungsi Tutup Modal
-        const closeModal = () => {
-            exitModal.classList.add('hidden');
+        // State
+        let currentCat = 'all';
+        let currentSearch = '';
+        let currentSort = 'featured';
+        let selectedHampers = {
+            id: 'hampers-harmony',
+            name: 'Paket Harmony (1 Loyang + 1 Snack)',
+            price: 115000
         };
+        let cart = [
+            { id: 'bingka-keju', name: 'Bingka Kentang Keju Spesial', price: 75000, unit: 'Loyang Penuh Full Topping', image: 'Bingka Keju.png', qty: 1 }
+        ];
 
-        btnBatal.addEventListener('click', closeModal);
-        exitOverlay.addEventListener('click', closeModal);
+        const formatIDR = (num) => 'Rp ' + num.toLocaleString('id-ID');
 
-        // Fungsi Lanjut ke Link
-        btnLanjut.addEventListener('click', () => {
-            window.open(targetUrl, '_blank'); 
-            closeModal();
+        // Render Menu Cards
+        function renderMenu() {
+            const grid = document.getElementById('menu-grid');
+            let filtered = MENU_ITEMS.filter(item => {
+                const matchCat = currentCat === 'all' || item.category === currentCat;
+                const matchSearch = !currentSearch || 
+                    item.name.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    item.desc.toLowerCase().includes(currentSearch.toLowerCase());
+                return matchCat && matchSearch;
+            });
+
+            if (currentSort === 'price-asc') filtered.sort((a, b) => a.price - b.price);
+            if (currentSort === 'price-desc') filtered.sort((a, b) => b.price - a.price);
+
+            document.getElementById('menu-count-label').textContent = `${filtered.length} Sajian`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full bg-white oriental-card rounded-2xl p-8 text-center space-y-2">
+                        <div class="text-3xl">🏮</div>
+                        <h3 class="font-serif text-lg font-bold text-maroon-900">Sajian tidak ditemukan</h3>
+                        <p class="text-xs text-maroon-700">Coba kata kunci lain atau tampilkan semua menu Dapoer Banjar.</p>
+                        <button onclick="resetFilters()" class="bg-maroon-800 text-gold-300 px-4 py-1.5 rounded-full text-xs font-bold mt-2">Tampilkan Semua Menu</button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(item => {
+                const inCart = cart.find(c => c.id === item.id);
+                return `
+                    <article class="oriental-card bg-white rounded-2xl p-2.5 sm:p-3.5 flex flex-col justify-between relative overflow-hidden group">
+                        <div>
+                            <!-- Product Image with Oriental Badge -->
+                            <div onclick="openProductModal('${item.id}')" class="relative h-36 sm:h-44 rounded-xl bg-parchment-100 border border-gold-500/30 overflow-hidden flex items-center justify-center cursor-pointer">
+                                <span class="absolute top-2 left-2 z-10 bg-maroon-900/90 text-gold-300 border border-gold-400/60 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                                    ${item.badge}
+                                </span>
+                                <img src="${item.image}" alt="${item.name}" loading="lazy"
+                                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <!-- Elegant Oriental SVG Fallback -->
+                                <div class="hidden text-center p-3">
+                                    <div class="w-12 h-12 rounded-full bg-maroon-800 text-gold-300 border border-gold-400 flex items-center justify-center mx-auto font-display text-sm">福</div>
+                                    <span class="text-[10px] text-maroon-800 font-bold block mt-1">${item.name}</span>
+                                </div>
+                            </div>
+
+                            <!-- Text Info -->
+                            <div class="mt-2.5 space-y-1">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-maroon-700 block">${item.category}</span>
+                                <h3 onclick="openProductModal('${item.id}')" class="font-serif text-base sm:text-lg font-bold text-maroon-950 leading-snug line-clamp-2 cursor-pointer hover:text-maroon-700">
+                                    ${item.name}
+                                </h3>
+                                <p class="text-[11px] text-maroon-800/75 line-clamp-2 leading-relaxed">${item.desc}</p>
+                            </div>
+                        </div>
+
+                        <!-- Price & Order Action -->
+                        <div class="mt-3 pt-2.5 border-t border-gold-500/30 flex items-center justify-between gap-1">
+                            <div>
+                                <span class="text-[10px] text-maroon-700/70 block leading-none">${item.unit.split(' ')[0]} ${item.unit.split(' ')[1] || ''}</span>
+                                <span class="text-xs sm:text-sm font-extrabold text-maroon-900">${formatIDR(item.price)}</span>
+                            </div>
+                            <button onclick="addToCart('${item.id}')" class="${inCart ? 'bg-gold-500 text-maroon-950 border-maroon-900' : 'bg-maroon-800 hover:bg-maroon-700 text-gold-300 border-gold-400'} border px-3 py-1.5 rounded-xl text-[11px] font-extrabold transition-all active:scale-95 shrink-0">
+                                ${inCart ? `+ Dipesan (${inCart.qty})` : '+ Pesan'}
+                            </button>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // Category & Search Handlers
+        function filterCategory(cat) {
+            currentCat = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = 'cat-btn bg-maroon-800 text-gold-300 border border-gold-500 px-4 py-2 rounded-full text-xs font-bold shrink-0 shadow-sm transition-all';
+                } else {
+                    btn.className = 'cat-btn bg-white text-maroon-900 border border-gold-500/50 hover:border-maroon-800 px-4 py-2 rounded-full text-xs font-bold shrink-0 transition-all';
+                }
+            });
+            renderMenu();
+        }
+
+        function handleSearch(val) {
+            currentSearch = val.trim();
+            renderMenu();
+        }
+
+        function handleSort(val) {
+            currentSort = val;
+            renderMenu();
+        }
+
+        function resetFilters() {
+            currentCat = 'all';
+            currentSearch = '';
+            const mInput = document.getElementById('mobile-search-input');
+            const dInput = document.getElementById('desktop-search');
+            if (mInput) mInput.value = '';
+            if (dInput) dInput.value = '';
+            filterCategory('all');
+        }
+
+        function toggleMobileSearch() {
+            const box = document.getElementById('mobile-search-box');
+            box.classList.toggle('hidden');
+            if (!box.classList.contains('hidden')) {
+                document.getElementById('mobile-search-input').focus();
+            }
+        }
+
+        // Custom Hampers Builder Logic
+        function selectHampersTier(tierKey, name, price) {
+            selectedHampers = { id: 'hampers-' + tierKey, name, price };
+            document.getElementById('preview-tier-name').textContent = name;
+            document.getElementById('preview-tier-price').textContent = formatIDR(price);
+
+            ['harmony', 'imperial', 'emperor'].forEach(k => {
+                const el = document.getElementById('tier-' + k);
+                if (k === tierKey) {
+                    el.className = 'hampers-tier-btn bg-maroon-950/90 border-2 border-gold-400 rounded-2xl p-3 text-left transition-all';
+                } else {
+                    el.className = 'hampers-tier-btn bg-maroon-900/60 border border-gold-500/40 rounded-2xl p-3 text-left transition-all';
+                }
+            });
+        }
+
+        function addCustomHampersToCart() {
+            const flavor = document.getElementById('hampers-flavor').value;
+            const note = document.getElementById('hampers-card-note').value.trim();
+            const customId = `${selectedHampers.id}-${flavor}`;
+            const fullTitle = `🏮 ${selectedHampers.name} [${flavor}]${note ? ' — Kartu: "' + note + '"' : ''}`;
+
+            const existing = cart.find(c => c.id === customId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    id: customId,
+                    name: fullTitle,
+                    price: selectedHampers.price,
+                    unit: 'Hampers Box Maroon-Gold',
+                    image: 'Bingka mini.jpg',
+                    qty: 1
+                });
+            }
+            updateCartUI();
+            showToast('🏮 Paket Hampers Oriental ditambahkan!');
+        }
+
+        // Product Quick View Modal
+        function openProductModal(itemId) {
+            const item = MENU_ITEMS.find(m => m.id === itemId);
+            if (!item) return;
+
+            const body = document.getElementById('product-modal-body');
+            body.innerHTML = `
+                <div class="flex gap-3.5 items-center">
+                    <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-parchment-100 border-2 border-gold-500 overflow-hidden shrink-0 flex items-center justify-center">
+                        <img src="${item.image}" alt="${item.name}" onerror="this.src='GGG.png'" class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-1">
+                        <span class="bg-maroon-800 text-gold-300 text-[10px] font-bold px-2.5 py-0.5 rounded-full">${item.badge}</span>
+                        <h3 class="font-serif text-xl font-bold text-maroon-950 leading-snug">${item.name}</h3>
+                        <p class="text-[11px] font-semibold text-maroon-700">${item.unit}</p>
+                        <div class="text-base font-extrabold text-maroon-900">${formatIDR(item.price)}</div>
+                    </div>
+                </div>
+                <p class="text-xs text-maroon-900/85 leading-relaxed mt-3">${item.desc}</p>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                    ${item.tags.map(t => `<span class="text-[10px] font-bold bg-gold-100 text-maroon-900 border border-gold-500/50 px-2.5 py-1 rounded-full">❖ ${t}</span>`).join('')}
+                </div>
+                <div class="mt-4 pt-3 border-t border-gold-500/40 flex gap-2">
+                    <button onclick="closeProductModal()" class="px-4 py-2.5 rounded-xl border border-maroon-800/30 text-xs font-bold text-maroon-900">Tutup</button>
+                    <button onclick="addToCart('${item.id}'); closeProductModal();" class="flex-1 bg-maroon-800 hover:bg-maroon-700 text-gold-300 border border-gold-400 py-2.5 rounded-xl text-xs font-extrabold shadow-md">
+                        + Tambah ke Pesanan (${formatIDR(item.price)})
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('product-backdrop').classList.remove('hidden');
+            const sheet = document.getElementById('product-sheet');
+            sheet.classList.remove('hidden', 'sheet-closed');
+            sheet.classList.add('sheet-open');
+        }
+
+        function closeProductModal() {
+            const sheet = document.getElementById('product-sheet');
+            sheet.classList.remove('sheet-open');
+            sheet.classList.add('sheet-closed');
+            setTimeout(() => {
+                sheet.classList.add('hidden');
+                document.getElementById('product-backdrop').classList.add('hidden');
+            }, 180);
+        }
+
+        // Cart Operations
+        function addToCart(itemId) {
+            const menu = MENU_ITEMS.find(m => m.id === itemId);
+            if (!menu) return;
+
+            const existing = cart.find(c => c.id === itemId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    id: menu.id,
+                    name: menu.name,
+                    price: menu.price,
+                    unit: menu.unit,
+                    image: menu.image,
+                    qty: 1
+                });
+            }
+            updateCartUI();
+            renderMenu();
+            showToast(`❖ ${menu.name} ditambahkan`);
+        }
+
+        function changeCartQty(itemId, delta) {
+            const idx = cart.findIndex(c => c.id === itemId);
+            if (idx === -1) return;
+            cart[idx].qty += delta;
+            if (cart[idx].qty <= 0) cart.splice(idx, 1);
+            updateCartUI();
+            renderMenu();
+        }
+
+        function updateCartUI() {
+            let totalQty = 0;
+            let totalPrice = 0;
+
+            cart.forEach(c => {
+                totalQty += c.qty;
+                totalPrice += c.price * c.qty;
+            });
+
+            document.getElementById('header-cart-badge').textContent = totalQty;
+            document.getElementById('mobile-nav-badge').textContent = totalQty;
+            document.getElementById('floating-count').textContent = totalQty;
+            document.getElementById('floating-total').textContent = formatIDR(totalPrice);
+            document.getElementById('cart-total-display').textContent = formatIDR(totalPrice);
+
+            const floatBar = document.getElementById('floating-cart');
+            if (totalQty > 0) {
+                floatBar.classList.remove('hidden');
+            } else {
+                floatBar.classList.add('hidden');
+            }
+
+            const container = document.getElementById('cart-items-container');
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="py-8 text-center text-xs text-maroon-700 font-semibold">Keranjang pesanan Anda masih kosong 🏮</div>`;
+                return;
+            }
+
+            container.innerHTML = cart.map(c => `
+                <div class="bg-white border border-gold-500/50 rounded-xl p-2.5 flex items-center justify-between gap-2 shadow-2xs">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <img src="${c.image}" alt="" onerror="this.src='GGG.png'" class="w-11 h-11 rounded-lg object-cover border border-gold-500/40 shrink-0">
+                        <div class="min-w-0">
+                            <h4 class="text-xs font-extrabold text-maroon-950 truncate">${c.name}</h4>
+                            <span class="text-xs font-bold text-maroon-700">${formatIDR(c.price * c.qty)}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 bg-parchment-100 border border-gold-500/60 rounded-full px-2.5 py-0.5 shrink-0">
+                        <button onclick="changeCartQty('${c.id}', -1)" class="text-xs font-extrabold text-maroon-900 px-1">-</button>
+                        <span class="text-xs font-extrabold text-maroon-950">${c.qty}</span>
+                        <button onclick="changeCartQty('${c.id}', 1)" class="text-xs font-extrabold text-maroon-900 px-1">+</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openCartSheet() {
+            document.getElementById('cart-backdrop').classList.remove('hidden');
+            const sheet = document.getElementById('cart-sheet');
+            sheet.classList.remove('hidden', 'sheet-closed');
+            sheet.classList.add('sheet-open');
+        }
+
+        function closeCartSheet() {
+            const sheet = document.getElementById('cart-sheet');
+            sheet.classList.remove('sheet-open');
+            sheet.classList.add('sheet-closed');
+            setTimeout(() => {
+                sheet.classList.add('hidden');
+                document.getElementById('cart-backdrop').classList.add('hidden');
+            }, 180);
+        }
+
+        function generateOrderMessage() {
+            const name = document.getElementById('cust-name').value.trim() || 'Pelanggan Dapoer Banjar';
+            const addr = document.getElementById('cust-address').value.trim() || 'Jakarta';
+            const note = document.getElementById('cust-note').value.trim();
+
+            let total = 0;
+            const lines = cart.map((c, i) => {
+                const sub = c.price * c.qty;
+                total += sub;
+                return `${i + 1}. ${c.name} (x${c.qty}) = ${formatIDR(sub)}`;
+            });
+
+            return `Halo Admin *Dapoer Banjar Jakarta* 🏮\nSaya *${name}* (${addr}) ingin memesan:\n\n${lines.join('\n')}\n\n*Total Estimasi: ${formatIDR(total)}*${note ? '\nCatatan: ' + note : ''}\n\nMohon info ketersediaan & ongkirnya. Terima kasih!`;
+        }
+
+        function copyOrderFormat() {
+            if (cart.length === 0) {
+                showToast('Pilih menu terlebih dahulu!');
+                return;
+            }
+            const area = document.createElement('textarea');
+            area.value = generateOrderMessage();
+            document.body.appendChild(area);
+            area.select();
+            document.execCommand('copy');
+            area.remove();
+            showToast('📋 Format pesanan berhasil disalin!');
+        }
+
+        function sendWhatsApp() {
+            if (cart.length === 0) {
+                showToast('Pilih menu terlebih dahulu!');
+                return;
+            }
+            const msg = encodeURIComponent(generateOrderMessage());
+            window.open(`https://wa.me/?text=${msg}`, '_blank');
+        }
+
+        function showToast(text) {
+            const box = document.getElementById('toast-container');
+            const el = document.createElement('div');
+            el.className = 'bg-maroon-950 text-gold-300 border border-gold-400 text-xs font-bold px-4 py-2 rounded-full shadow-lg';
+            el.textContent = text;
+            box.appendChild(el);
+            setTimeout(() => el.remove(), 2200);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderMenu();
+            updateCartUI();
         });
     </script>
-
 </body>
 </html>
